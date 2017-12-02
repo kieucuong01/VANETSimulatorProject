@@ -1,0 +1,68 @@
+Dec 02, 2017 9:30:18 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_25.11.2017_08.34.46.txt deleted successfully!
+Dec 02, 2017 9:30:18 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_25.11.2017_08.35.06.txt deleted successfully!
+Dec 02, 2017 9:30:18 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_25.11.2017_08.35.25.txt deleted successfully!
+Dec 02, 2017 9:30:18 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_25.11.2017_08.35.44.txt deleted successfully!
+Dec 02, 2017 9:30:18 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_25.11.2017_08.35.59.txt deleted successfully!
+Dec 02, 2017 9:30:18 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_25.11.2017_10.28.57.txt deleted successfully!
+Dec 02, 2017 9:30:21 AM global
+CONFIG: 0MB accelerated VRAM found.
+Dec 02, 2017 9:32:00 AM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS.xml
+Dec 02, 2017 9:32:03 AM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 02, 2017 9:32:17 AM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test.xml
+Dec 02, 2017 9:32:17 AM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 02, 2017 9:32:20 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 9:32:20 AM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 02, 2017 9:32:20 AM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 02, 2017 9:32:20 AM Worker startX:0 startY:4 Worker constructor
+FINEST: Created worker thread with 5 regions.
+Dec 02, 2017 9:32:20 AM Worker startX:1 startY:4 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 02, 2017 9:32:20 AM Worker startX:2 startY:3 Worker constructor
+FINEST: Created worker thread with 5 regions.
+Dec 02, 2017 9:32:20 AM Worker startX:3 startY:3 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 02, 2017 9:32:20 AM Worker startX:4 startY:2 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 02, 2017 9:32:20 AM Worker startX:5 startY:1 Worker constructor
+FINEST: Created worker thread with 5 regions.
+Dec 02, 2017 9:32:20 AM Worker startX:6 startY:1 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 02, 2017 9:32:37 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 02, 2017 9:50:56 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 9:51:01 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 02, 2017 10:34:28 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 10:34:36 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 02, 2017 10:34:37 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 10:34:39 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 02, 2017 10:34:39 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 10:34:40 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 02, 2017 10:34:41 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 10:34:51 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 02, 2017 10:37:14 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 10:37:19 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.

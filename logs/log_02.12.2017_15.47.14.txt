@@ -1,0 +1,42 @@
+Dec 02, 2017 3:47:18 PM global
+CONFIG: 0MB accelerated VRAM found.
+Dec 02, 2017 3:47:35 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 3:47:35 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 02, 2017 3:47:35 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 13 regions.
+Dec 02, 2017 3:47:35 PM Worker startX:1 startY:3 Worker constructor
+FINEST: Created worker thread with 12 regions.
+Dec 02, 2017 3:47:35 PM Worker startX:2 startY:5 Worker constructor
+FINEST: Created worker thread with 13 regions.
+Dec 02, 2017 3:47:35 PM Worker startX:3 startY:8 Worker constructor
+FINEST: Created worker thread with 12 regions.
+Dec 02, 2017 3:47:35 PM Worker startX:5 startY:0 Worker constructor
+FINEST: Created worker thread with 13 regions.
+Dec 02, 2017 3:47:35 PM Worker startX:6 startY:3 Worker constructor
+FINEST: Created worker thread with 12 regions.
+Dec 02, 2017 3:47:35 PM Worker startX:7 startY:5 Worker constructor
+FINEST: Created worker thread with 13 regions.
+Dec 02, 2017 3:47:35 PM Worker startX:8 startY:8 Worker constructor
+FINEST: Created worker thread with 12 regions.
+Dec 02, 2017 3:47:38 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 3:47:38 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 3:47:39 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 3:47:39 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 3:47:40 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 02, 2017 3:47:40 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 3:47:41 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 02, 2017 3:47:41 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 02, 2017 3:47:41 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 02, 2017 3:47:42 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.

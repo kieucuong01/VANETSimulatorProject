@@ -1,0 +1,27 @@
+Dec 02, 2017 12:48:30 PM vanetsim.gui.Renderer Constructor
+SEVERE: Couldn't find image for blocking. Disabling display!
+Unknown transparency: 33
+java.lang.IllegalArgumentException: Unknown transparency: 33
+	at java.awt.GraphicsConfiguration.createCompatibleImage(GraphicsConfiguration.java:183)
+	at vanetsim.gui.Renderer.<init>(Renderer.java:357)
+	at vanetsim.gui.Renderer.<clinit>(Renderer.java:72)
+	at vanetsim.gui.DrawingArea.<init>(DrawingArea.java:64)
+	at vanetsim.VanetSimStart.addComponentsToPane(VanetSimStart.java:138)
+	at vanetsim.VanetSimStart.run(VanetSimStart.java:92)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Dec 02, 2017 12:48:35 PM global
+CONFIG: 0MB accelerated VRAM found.

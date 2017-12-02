@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="java1.6"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="externaljars/staxmate-with-stax2-1.3.0.jar"/>
+	<classpathentry kind="lib" path="externaljars/substance.jar"/>
+	<classpathentry kind="lib" path="externaljars/wstx-lgpl-3.2.6.jar"/>
+	<classpathentry kind="lib" path="LogAnalyser.jar"/>
+	<classpathentry kind="lib" path="VanetSimStarter.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
