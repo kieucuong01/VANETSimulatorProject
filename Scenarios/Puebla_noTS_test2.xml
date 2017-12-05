@@ -111,7 +111,7 @@
 		<MixZones />
 		<RSUs>
 			<RSU>
-				<x>78688</x>
+				<x>68688</x>
 				<y>57016</y>
 				<radius>20000</radius>
 				<isEncrypted>false</isEncrypted>
@@ -125,14 +125,9 @@
 		</RSUs>
 		<ARSUs>
 			<ARSU>
-				<x>195651</x>
-				<y>244765</y>
-				<radius>100000</radius>
-			</ARSU>
-			<ARSU>
 				<x>84538</x>
-				<y>72144</y>
-				<radius>70000</radius>
+				<y>60144</y>
+				<radius>60000</radius>
 			</ARSU>
 		</ARSUs>
 		<Events />

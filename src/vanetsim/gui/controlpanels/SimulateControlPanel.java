@@ -49,6 +49,7 @@ import javax.swing.event.ChangeListener;
 import vanetsim.ErrorLog;
 import vanetsim.VanetSimStart;
 import vanetsim.VanetSimStarter;
+import vanetsim.gui.DrawingArea;
 import vanetsim.gui.Renderer;
 import vanetsim.gui.helpers.ButtonCreator;
 import vanetsim.gui.helpers.ReRenderManager;
@@ -74,6 +75,9 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 	/** An area to display text information. */
 	private final JTextArea informationTextArea_;
 	
+	/** An area to display text information. */
+	private final JTextArea scenarioInformationTextArea_;
+
 	/** A checkbox to enable/disable the display of circles so that it's possible to see the max. distances the vehicles may communicate. */
 	private final JCheckBox communicationDisplayCheckBox_;
 	
@@ -272,17 +276,53 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 		c.insets = new Insets(5,5,5,5);
 		
 		// System initialize
-		jLabel1 = new JLabel("<html><b>" +Messages.getString("SimulateControlPanel.systemInitalization") +"</b></html>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		jLabel1 = new JLabel("<html><b>" +Messages.getString("SimulateControlPanel.scenario1") +"</b></html>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		++c.gridy;
 		add(jLabel1, c);
 		
-		JPanel systemInitializePanel = new JPanel(new CardLayout());
+		JPanel scenario1 = new JPanel(new CardLayout());
 
-		systemInitializePanel.add(ButtonCreator.getJButton("start.png", "initialize", Messages.getString("SimulateControlPanel.initialize"), this), "initialize");
+		scenario1.add(ButtonCreator.getJButton("start.png", "scenario1", Messages.getString("SimulateControlPanel.scenario1"), this), "scenario1");
 		++c.gridy;
 		c.gridwidth = 1;
-		add(systemInitializePanel, c);
+		add(scenario1, c);
 
+		// Scenario 2
+		jLabel1 = new JLabel("<html><b>" +Messages.getString("SimulateControlPanel.scenario2") +"</b></html>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		++c.gridy;
+		add(jLabel1, c);
+		
+		JPanel scenario2 = new JPanel(new CardLayout());
+
+		scenario2.add(ButtonCreator.getJButton("start.png", "scenario2", Messages.getString("SimulateControlPanel.scenario2"), this), "scenario2");
+		++c.gridy;
+		c.gridwidth = 1;
+		add(scenario2, c);
+		
+		// Scenario 3
+		jLabel1 = new JLabel("<html><b>" +Messages.getString("SimulateControlPanel.scenario3") +"</b></html>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		++c.gridy;
+		add(jLabel1, c);
+		
+		JPanel scenario3 = new JPanel(new CardLayout());
+
+		scenario3.add(ButtonCreator.getJButton("start.png", "scenario3", Messages.getString("SimulateControlPanel.scenario3"), this), "scenario3");
+		++c.gridy;
+		c.gridwidth = 1;
+		add(scenario3, c);
+		
+		//text area for display of information running scenario
+		c.gridwidth = 2;
+		scenarioInformationTextArea_ = new JTextArea(20,1);
+		scenarioInformationTextArea_.setEditable(false);
+		scenarioInformationTextArea_.setLineWrap(true);
+		JScrollPane scrolltext1 = new JScrollPane(scenarioInformationTextArea_);
+		scrolltext1.setOpaque(false);
+		scrolltext1.getViewport().setOpaque(false);
+		c.weighty = 1.0;
+		++c.gridy;
+		add(scrolltext1, c);
+		
 		//text area for display of information. Consumes all available space
 		c.gridwidth = 2;
 		informationTextArea_ = new JTextArea(20,1);
@@ -441,7 +481,21 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 		{ 
 			repaintGUI();
 		}
-		
+		else if("scenario1".equals(command)) {
+			
+			//SimulateControlPanel simulatePanel = VanetSimStart.getMainControlPanel().getSimulatePanel();
+			String x = "Infomation system : + Public key : xx \n";
+			String y = "Vehicle 1 : uj1 = yyy \n";
+			String z = "Vehicle 2 : uj1 = yyy \n";
+			scenarioInformationTextArea_.setText(x + y + z);
+			Renderer.getInstance().setScenario(1);
+		}
+		else if("scenario2".equals(command)) {
+			Renderer.getInstance().setScenario(2);
+		}
+		else if(	"scenario3".equals(command)) {
+			Renderer.getInstance().setScenario(3);
+	}
 		
 	}
 

@@ -1,0 +1,116 @@
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_09.30.18.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_11.18.06.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_11.25.54.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_11.55.20.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.07.03.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.31.19.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.34.20.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.35.10.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.36.03.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.38.16.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.39.13.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.43.04.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.44.02.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.44.40.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.46.56.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.48.28.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.56.32.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.57.40.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.59.20.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.00.36.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.12.27.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.12.44.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.30.10.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.30.22.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.32.06.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.42.47.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.44.12.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.45.31.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.50.46.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.51.50.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.24.22.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.26.45.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.31.39.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.33.18.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.47.14.txt deleted successfully!
+Dec 05, 2017 9:03:48 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.50.54.txt deleted successfully!
+Dec 05, 2017 9:03:51 AM global
+CONFIG: 0MB accelerated VRAM found.
+Dec 05, 2017 9:04:21 AM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS.xml
+Dec 05, 2017 9:04:24 AM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 9:04:31 AM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 9:04:31 AM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 9:04:34 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 9:04:34 AM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 05, 2017 9:04:34 AM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 05, 2017 9:04:34 AM Worker startX:0 startY:4 Worker constructor
+FINEST: Created worker thread with 5 regions.
+Dec 05, 2017 9:04:34 AM Worker startX:1 startY:4 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 05, 2017 9:04:34 AM Worker startX:2 startY:3 Worker constructor
+FINEST: Created worker thread with 5 regions.
+Dec 05, 2017 9:04:34 AM Worker startX:3 startY:3 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 05, 2017 9:04:34 AM Worker startX:4 startY:2 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 05, 2017 9:04:34 AM Worker startX:5 startY:1 Worker constructor
+FINEST: Created worker thread with 5 regions.
+Dec 05, 2017 9:04:34 AM Worker startX:6 startY:1 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 05, 2017 9:04:36 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 9:05:01 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 9:05:26 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 9:10:10 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 9:10:11 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 9:10:20 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 9:10:21 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.

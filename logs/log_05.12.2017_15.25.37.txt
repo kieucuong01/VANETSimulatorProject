@@ -1,0 +1,60 @@
+Dec 05, 2017 3:25:39 PM global
+CONFIG: 0MB accelerated VRAM found.
+Dec 05, 2017 3:26:02 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS_test2.xml
+Dec 05, 2017 3:26:05 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 3:26:11 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 3:26:11 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 3:26:13 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 3:26:13 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 05, 2017 3:26:13 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 3:26:13 PM Worker startX:0 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 3:26:13 PM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 3:26:13 PM Worker startX:1 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 3:26:43 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 3:29:49 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 3:29:51 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 4:22:12 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 4:22:12 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 4:22:12 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 4:22:13 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 4:22:13 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 4:22:13 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 4:22:14 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 4:22:26 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 4:27:06 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 4:30:52 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 4:31:07 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 4:37:19 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 4:37:38 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 4:37:53 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 4:37:55 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 4:38:15 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.

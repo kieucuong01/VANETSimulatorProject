@@ -42,6 +42,7 @@ import java.awt.geom.Path2D;
 import java.util.ArrayDeque;
 
 import javax.imageio.ImageIO;
+import javax.swing.JFrame;
 
 import vanetsim.ErrorLog;
 import vanetsim.localization.Messages;
@@ -96,7 +97,7 @@ public final class Renderer{
 	private final Font silentPeriodFont_ = new Font("Default", Font.BOLD, 20); //$NON-NLS-1$
 	
 	/** The font size for displaying the vehicle ID. */
-	private final int vehicleIDFontSize_ = 150;
+	private final int vehicleIDFontSize_ = 1150;
 	
 	/** The font used for displaying the vehicle ID. */
 	private final Font vehicleIDFont_ = new Font("SansSerif", Font.PLAIN, vehicleIDFontSize_); //$NON-NLS-1$
@@ -215,6 +216,8 @@ public final class Renderer{
 	/** If vehicle IDs shall be displayed. */
 	private boolean displayVehicleIDs_ = false;
 
+	private int scenario_ = -1;
+
 	/** <code>true</code> if all blockings shall be showed, else <code>false</code>. */
 	private boolean showAllBlockings_;
 	
@@ -274,6 +277,8 @@ public final class Renderer{
 	private BufferedImage TAImg_;
 	
 	private BufferedImage RSUImg_;
+
+	private BufferedImage speechBuble_;
 
 	/** flag for console start*/
 	private boolean consoleStart = false;
@@ -370,6 +375,12 @@ public final class Renderer{
 			tmpImage = ImageIO.read(url);
 			RSUImg_ = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration().createCompatibleImage(tmpImage.getWidth(), tmpImage.getHeight(), 3);
 			RSUImg_.getGraphics().drawImage(tmpImage, 0, 0, null);
+			
+			url = ClassLoader.getSystemResource("vanetsim/images/speech_buble.png"); 
+			tmpImage = ImageIO.read(url);
+			speechBuble_ = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration().createCompatibleImage(tmpImage.getWidth(), tmpImage.getHeight(), 3);
+			speechBuble_.getGraphics().drawImage(tmpImage, 0, 0, null);
+
 		} catch(Exception e){
 			ErrorLog.log(Messages.getString("Renderer.noBlockingImage"), 7, Renderer.class.getName(), "Constructor", e);  //$NON-NLS-1$//$NON-NLS-2$
 			//create just empty transparent images.
@@ -558,7 +569,27 @@ public final class Renderer{
 								for(k = 0; k < size; ++k){
 									vehicle = vehicles[k];
 									if(vehicle.isActive() && vehicle.getX() >= mapMinX_ && vehicle.getX() <= mapMaxX_ && vehicle.getY() >= mapMinY_ && vehicle.getY() <= mapMaxY_){		//only paint when necessary and within paint area
-										g2d.drawString(vehicle.getHexID(), vehicle.getX() - vehicleIDFontSize_ *4, vehicle.getY() - VEHICLE_SIZE/2);
+										g2d.drawImage(speechBuble_, vehicle.getX()-VEHICLE_SIZE/2,  vehicle.getY()-20000, 20000, 20000, null);
+										if (scenario_ == 1) {
+										g2d.drawString("Message : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 15000);
+										g2d.drawString("Psudonym : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 12500);
+										g2d.drawString("Private key : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 10000);
+										g2d.drawString("Private key : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 7500);
+										}
+										
+										if (scenario_ == 2) {
+											g2d.drawString("Message : yyyy \n", vehicle.getX() - 2000, vehicle.getY() - 15000);
+											g2d.drawString("Psudonym : yyyy \n", vehicle.getX() - 2000, vehicle.getY() - 12500);
+											g2d.drawString("Private key : yy \n", vehicle.getX() - 2000, vehicle.getY() - 10000);
+											g2d.drawString("Private key : yyyyy \n", vehicle.getX() - 2000, vehicle.getY() - 7500);
+											}
+										
+										if (scenario_ == 3) {
+											g2d.drawString("Message : zzz \n", vehicle.getX() - 2000, vehicle.getY() - 15000);
+											g2d.drawString("Psudonym : zzzz \n", vehicle.getX() - 2000, vehicle.getY() - 12500);
+											g2d.drawString("Private key : zzzz \n", vehicle.getX() - 2000, vehicle.getY() - 10000);
+											g2d.drawString("Private key : zzzz \n", vehicle.getX() - 2000, vehicle.getY() - 7500);
+											}
 									}
 								}
 							}
@@ -638,12 +669,12 @@ public final class Renderer{
 				// draw vehicle marked by user
 				if(markedVehicle_ != null){
 					g2d.setPaint(Color.RED);
-					g2d.fillOval(markedVehicle_.getX()-VEHICLE_SIZE/2+35, markedVehicle_.getY()-VEHICLE_SIZE/2+35,VEHICLE_SIZE-70,VEHICLE_SIZE-70);
+					g2d.fillOval(markedVehicle_.getX()-100/2+35, markedVehicle_.getY()-100/2+35,100-70,100-70);
 					if(markedVehicle_.isWiFiEnabled() && (!markedVehicle_.isInMixZone() || Vehicle.getMixZonesFallbackEnabled())) g2d.drawOval(markedVehicle_.getX()-markedVehicle_.getMaxCommDistance(), markedVehicle_.getY()-markedVehicle_.getMaxCommDistance(),markedVehicle_.getMaxCommDistance()*2,markedVehicle_.getMaxCommDistance()*2);
 					WayPoint nextDestination = markedVehicle_.getDestinations().peekFirst();
 					if(nextDestination != null){
 						g2d.drawLine(markedVehicle_.getX(), markedVehicle_.getY(), nextDestination.getX(), nextDestination.getY());
-						g2d.fillOval(nextDestination.getX()-VEHICLE_SIZE, nextDestination.getY()-VEHICLE_SIZE,VEHICLE_SIZE*2,VEHICLE_SIZE*2);
+						g2d.fillOval(nextDestination.getX()-100, nextDestination.getY()-100,100*2,100*2);
 						Street[] routestreets = markedVehicle_.getRouteStreets();
 						if(routestreets.length > 1){
 							g2d.setPaint(Color.blue);
@@ -1768,6 +1799,9 @@ public final class Renderer{
 		displayVehicleIDs_ = displayVehicleIDs;
 	}
 
+	public void setScenario(int scenanior){
+		scenario_ = scenanior;
+	}
 	/**
 	 * If you want to show all blockings.
 	 * 

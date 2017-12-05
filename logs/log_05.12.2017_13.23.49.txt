@@ -1,0 +1,422 @@
+Dec 05, 2017 1:23:53 PM global
+CONFIG: 0MB accelerated VRAM found.
+Dec 05, 2017 1:24:08 PM vanetsim.map.Map loadMap
+FINE: Loading map from Quan10.xml
+Dec 05, 2017 1:24:12 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:24:16 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS.xml
+Dec 05, 2017 1:24:20 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:24:41 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 1:24:41 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 1:24:45 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 1:24:45 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 05, 2017 1:24:45 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 05, 2017 1:24:45 PM Worker startX:0 startY:4 Worker constructor
+FINEST: Created worker thread with 5 regions.
+Dec 05, 2017 1:24:45 PM Worker startX:1 startY:4 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 05, 2017 1:24:45 PM Worker startX:2 startY:3 Worker constructor
+FINEST: Created worker thread with 5 regions.
+Dec 05, 2017 1:24:45 PM Worker startX:3 startY:3 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 05, 2017 1:24:45 PM Worker startX:4 startY:2 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 05, 2017 1:24:45 PM Worker startX:5 startY:1 Worker constructor
+FINEST: Created worker thread with 5 regions.
+Dec 05, 2017 1:24:45 PM Worker startX:6 startY:1 Worker constructor
+FINEST: Created worker thread with 4 regions.
+Dec 05, 2017 1:24:57 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 1:25:19 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS.xml
+Dec 05, 2017 1:25:37 PM Worker startX:0 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:25:37 PM Worker startX:3 startY:3 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:25:37 PM Worker startX:4 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:25:37 PM Worker startX:6 startY:1 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:25:37 PM Worker startX:5 startY:1 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:25:37 PM Worker startX:1 startY:4 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:25:37 PM Worker startX:2 startY:3 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:25:37 PM Worker startX:0 startY:4 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:25:40 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:25:54 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS.xml
+Dec 05, 2017 1:25:58 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:28:19 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:28:23 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:28:39 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:28:42 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:29:24 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 1:29:24 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 1:30:26 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:30:30 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:31:19 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 1:31:19 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 1:31:21 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 1:31:21 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 05, 2017 1:31:21 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:31:21 PM Worker startX:0 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:31:21 PM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:31:21 PM Worker startX:1 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:31:21 PM Worker startX:2 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:31:21 PM Worker startX:2 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:31:21 PM Worker startX:3 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:31:21 PM Worker startX:3 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:31:22 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 1:31:59 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:32:00 PM Worker startX:0 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:32:00 PM Worker startX:1 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:32:00 PM Worker startX:3 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:32:00 PM Worker startX:1 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:32:00 PM Worker startX:2 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:32:00 PM Worker startX:2 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:32:00 PM Worker startX:0 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:32:00 PM Worker startX:3 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:32:02 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:33:40 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:33:43 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:36:19 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:36:22 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:37:16 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:37:19 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:37:56 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:37:59 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:38:56 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:38:59 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:39:18 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 1:39:18 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 1:39:21 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 1:39:21 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 05, 2017 1:39:21 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:39:21 PM Worker startX:0 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:39:21 PM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:39:21 PM Worker startX:1 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:39:21 PM Worker startX:2 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:39:21 PM Worker startX:2 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:39:21 PM Worker startX:3 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:39:21 PM Worker startX:3 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:39:25 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 1:41:03 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:41:04 PM Worker startX:0 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:41:04 PM Worker startX:1 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:41:04 PM Worker startX:2 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:41:04 PM Worker startX:2 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:41:04 PM Worker startX:1 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:41:04 PM Worker startX:3 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:41:04 PM Worker startX:3 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:41:04 PM Worker startX:0 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:41:06 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:42:14 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:42:17 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:42:46 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:42:49 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:43:56 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:43:59 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:44:52 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:44:55 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:45:47 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:45:50 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:47:54 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:47:57 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:48:06 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS copy.xml
+Dec 05, 2017 1:48:09 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 1:55:36 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 1:55:36 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 1:55:37 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 1:55:37 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 05, 2017 1:55:37 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:55:37 PM Worker startX:0 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:55:37 PM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:55:37 PM Worker startX:1 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:55:37 PM Worker startX:2 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:55:37 PM Worker startX:2 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:55:37 PM Worker startX:3 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 1:55:37 PM Worker startX:3 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 1:56:19 PM global
+WARNING: You can only enable editing on a clean map/scenario. Please reload the scenario!
+Dec 05, 2017 1:56:22 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 1:56:22 PM Worker startX:3 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:56:22 PM Worker startX:1 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:56:22 PM Worker startX:1 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:56:22 PM Worker startX:3 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:56:22 PM Worker startX:0 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:56:22 PM Worker startX:2 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:56:22 PM Worker startX:2 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 1:56:22 PM Worker startX:0 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:01:00 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 2:01:00 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 2:01:02 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 2:01:02 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 05, 2017 2:01:02 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 2:01:02 PM Worker startX:0 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:01:02 PM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 2:01:02 PM Worker startX:1 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:01:02 PM Worker startX:2 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 2:01:02 PM Worker startX:2 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:01:02 PM Worker startX:3 startY:0 Worker constructor
+FINEST: Created worker thread with 2 regions.
+Dec 05, 2017 2:01:02 PM Worker startX:3 startY:2 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:01:15 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 2:03:06 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS_test.xml
+Dec 05, 2017 2:03:07 PM Worker startX:0 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:03:07 PM Worker startX:0 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:03:07 PM Worker startX:3 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:03:07 PM Worker startX:2 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:03:07 PM Worker startX:3 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:03:07 PM Worker startX:2 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:03:07 PM Worker startX:1 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:03:07 PM Worker startX:1 startY:2 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:03:09 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 2:03:49 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS.xml
+Dec 05, 2017 2:03:52 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 2:05:08 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS.xml
+Dec 05, 2017 2:05:11 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 2:20:59 PM vanetsim.map.Map save
+FINE: Saving map in Puebla_noTS_test2.xml
+Dec 05, 2017 2:21:03 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS_test2.xml
+Dec 05, 2017 2:21:06 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 2:21:14 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 2:21:14 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 2:21:17 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 2:21:17 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 05, 2017 2:21:17 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:21:17 PM Worker startX:0 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:21:17 PM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:21:17 PM Worker startX:1 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:22:10 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 2:22:12 PM Worker startX:0 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:22:12 PM Worker startX:1 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:22:12 PM Worker startX:0 startY:1 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:22:12 PM Worker startX:1 startY:1 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:22:12 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 2:22:12 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 2:22:30 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 2:22:30 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 2:22:55 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 2:22:55 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 2:23:20 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 2:23:20 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 05, 2017 2:23:20 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:23:20 PM Worker startX:0 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:23:20 PM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:23:20 PM Worker startX:1 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:23:23 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 2:23:27 PM Worker startX:0 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:23:27 PM Worker startX:1 startY:1 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:23:27 PM Worker startX:0 startY:1 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:23:27 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 2:23:27 PM Worker startX:1 startY:0 run
+FINEST: Worker thread exited.
+Dec 05, 2017 2:23:27 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 2:24:23 PM vanetsim.map.Map loadMap
+FINE: Loading map from Puebla_noTS_test2.xml
+Dec 05, 2017 2:24:23 PM vanetsim.map.Map load
+SEVERE: Found wrong root element (<map> expected). File not supported!
+Dec 05, 2017 2:24:25 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 05, 2017 2:24:30 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 2:24:30 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 2:25:01 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from Puebla_noTS_test2.xml
+Dec 05, 2017 2:25:01 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 05, 2017 2:25:12 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 2:25:12 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 05, 2017 2:25:12 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:25:12 PM Worker startX:0 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:25:12 PM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:25:12 PM Worker startX:1 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 05, 2017 2:25:37 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 2:28:38 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 2:28:55 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 2:40:20 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 05, 2017 2:40:45 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 05, 2017 2:42:05 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.

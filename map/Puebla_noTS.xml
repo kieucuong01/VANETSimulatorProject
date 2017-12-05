@@ -3,8 +3,8 @@
 	<!--This file may contain data from the OpenStreetMap project which is licensed under the Creative Commons Attribution-ShareAlike 2.0 license.-->
 	<Map>
 		<Settings>
-			<Map_height>496542</Map_height>
-			<Map_width>610689</Map_width>
+			<Map_height>120000</Map_height>
+			<Map_width>160000</Map_width>
 			<Region_height>100000</Region_height>
 			<Region_width>100000</Region_width>
 		</Settings>

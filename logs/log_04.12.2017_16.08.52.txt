@@ -1,0 +1,2 @@
+Dec 04, 2017 4:08:54 PM global
+CONFIG: 0MB accelerated VRAM found.
