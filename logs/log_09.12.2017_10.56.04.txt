@@ -1,0 +1,18 @@
+Dec 09, 2017 10:56:07 AM global
+CONFIG: 0MB accelerated VRAM found.
+Dec 09, 2017 10:56:23 AM vanetsim.scenario.Scenario load
+FINE: Loading scenario from scenario1.xml
+Dec 09, 2017 10:56:23 AM vanetsim.scenario.Scenario load
+INFO: Snapping a waypoint to a street failed!
+Dec 09, 2017 10:56:23 AM vanetsim.scenario.Scenario load
+INFO: Snapping a waypoint to a street failed!
+Dec 09, 2017 10:56:23 AM vanetsim.scenario.Scenario load
+INFO: Couldn't add a vehicle because not all necessary fields could be found.
+Dec 09, 2017 10:56:23 AM vanetsim.scenario.Scenario load
+INFO: Snapping a waypoint to a street failed!
+Dec 09, 2017 10:56:23 AM vanetsim.scenario.Scenario load
+INFO: Snapping a waypoint to a street failed!
+Dec 09, 2017 10:56:23 AM vanetsim.scenario.Scenario load
+INFO: Couldn't add a vehicle because not all necessary fields could be found.
+Dec 09, 2017 10:56:23 AM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
