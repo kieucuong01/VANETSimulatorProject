@@ -1,4 +1,4 @@
-package vehicle.prime;
+package vanetsim.prime;
 
 import java.util.Random;
 

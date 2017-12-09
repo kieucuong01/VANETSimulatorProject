@@ -1,9 +1,9 @@
-package vehicle.ecc;
+package vanetsim.ecc;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import vehicle.dto.CyclicDTO;
+import vanetsim.dto.CyclicDTO;
 
 
 public class EllipticCurve {

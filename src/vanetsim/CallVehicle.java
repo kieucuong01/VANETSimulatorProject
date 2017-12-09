@@ -1,4 +1,4 @@
-package vehicle.main;
+package vanetsim;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -19,13 +19,13 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
-import vehicle.dto.CredentialDTO;
-import vehicle.dto.CyclicDTO;
-import vehicle.ecc.EllipticCurve;
-import vehicle.ecc.Point;
-import vehicle.hash.HashChain;
-import vehicle.prime.GenerateZ;
-import vehicle.prime.GeneratorPrime;
+import vanetsim.dto.CredentialDTO;
+import vanetsim.dto.CyclicDTO;
+import vanetsim.ecc.EllipticCurve;
+import vanetsim.ecc.Point;
+import vanetsim.hash.HashChain;
+import vanetsim.prime.GenerateZ;
+import vanetsim.prime.GeneratorPrime;
 
 public class CallVehicle {
 	private static long a = 7;
@@ -42,6 +42,7 @@ public class CallVehicle {
 	private static long k = 7; /* initially k = 33 */
 	private static int n = 100; /* initially n = 100 random curves */
 
+	
 	public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 		// TODO Auto-generated method stub
 		System.out.println("Prime Number: "+p );

@@ -1,4 +1,4 @@
-package vehicle.ecc;
+package vanetsim.ecc;
 
 
 

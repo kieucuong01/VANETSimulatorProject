@@ -1,4 +1,4 @@
-package vehicle.ecc;
+package vanetsim.ecc;
 
 import java.util.ArrayList;
 import java.util.List;

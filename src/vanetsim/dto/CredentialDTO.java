@@ -1,4 +1,4 @@
-package vehicle.dto;
+package vanetsim.dto;
 
 public class CredentialDTO {
 	
