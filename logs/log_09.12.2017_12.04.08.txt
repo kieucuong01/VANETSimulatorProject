@@ -1,6 +1,0 @@
-Dec 09, 2017 12:04:12 PM global
-CONFIG: 0MB accelerated VRAM found.
-Dec 09, 2017 12:05:23 PM vanetsim.map.Map loadMap
-FINE: Loading map from map.xml
-Dec 09, 2017 12:05:26 PM vanetsim.map.Map load
-FINE: Finished loading map.

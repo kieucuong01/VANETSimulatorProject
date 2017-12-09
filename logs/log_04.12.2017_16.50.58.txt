@@ -1,6 +1,0 @@
-Dec 04, 2017 4:51:00 PM global
-CONFIG: 0MB accelerated VRAM found.
-Dec 04, 2017 4:51:16 PM vanetsim.map.Map loadMap
-FINE: Loading map from Puebla_noTS.xml
-Dec 04, 2017 4:51:20 PM vanetsim.map.Map load
-FINE: Finished loading map.
