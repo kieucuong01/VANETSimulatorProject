@@ -1,0 +1,76 @@
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_09.30.18.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_11.18.06.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_11.25.54.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_11.55.20.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.07.03.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.31.19.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.34.20.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.35.10.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.36.03.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.38.16.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.39.13.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.43.04.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.44.02.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.44.40.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.46.56.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.48.28.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.56.32.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.57.40.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_12.59.20.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.00.36.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.12.27.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.12.44.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.30.10.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.30.22.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.32.06.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.42.47.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.44.12.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.45.31.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.50.46.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_13.51.50.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.24.22.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.26.45.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.31.39.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.33.18.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.47.14.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_15.50.54.txt deleted successfully!
+Dec 09, 2017 8:16:51 AM vanetsim.ErrorLog deleteold
+FINER: Old logfile ./logs/log_02.12.2017_21.31.20.txt deleted successfully!
+Dec 09, 2017 8:16:58 AM global
+CONFIG: 0MB accelerated VRAM found.
