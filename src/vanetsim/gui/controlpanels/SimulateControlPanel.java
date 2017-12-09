@@ -48,12 +48,15 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import vanetsim.ErrorLog;
+import vanetsim.Scenario1;
+import vanetsim.SystemInitial;
 import vanetsim.VanetSimStart;
 import vanetsim.VanetSimStarter;
 import vanetsim.gui.DrawingArea;
 import vanetsim.gui.Renderer;
 import vanetsim.gui.helpers.ButtonCreator;
 import vanetsim.gui.helpers.ReRenderManager;
+import vanetsim.hash.HashChain;
 import vanetsim.localization.Messages;
 import vanetsim.map.Map;
 import vanetsim.scenario.Scenario;
@@ -64,6 +67,20 @@ import vanetsim.simulation.SimulationMaster;
  */
 public final class SimulateControlPanel extends JPanel implements ActionListener, ChangeListener, ItemListener {
 
+	private static long a = 7;
+	private static long b = 12;
+	private static long p = 103; /* initial curve: E(F_103) : y^2 = x^3 + 7x + 12 */
+	private static long Gx = 102; /* initial generator: G = (102, 2) */
+	private static long Gy = 2;
+	private static long Px = 9; /* initially P = (9, 17) */
+	private static long Py = 17;
+	private static long Gx2 = 13;  /*initial G2 = (13,5)*/
+	private static long Gy2 = 5;
+	private static long Qx = 19; /* initially Q = (19, 0) */
+	private static long Qy = 0;
+	private static long k = 7; /* initially k = 33 */
+	private static int n = 100; /* initially n = 100 random curves */
+	
 	/** The necessary constant for serializing. */
 	private static final long serialVersionUID = 7292404190066585320L;
 
@@ -576,13 +593,47 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 		} else if ("guimode".equals(command)) {
 			repaintGUI();
 		} else if ("scenario1".equals(command)) {
+			// TODO Auto-generated method stub
+			SystemInitial systemInitial = new SystemInitial();
+			Scenario1 scenario1 = new Scenario1();
+			System.out.println("Prime Number: "+p );
+			System.out.println("Generator G1: ");
+			System.out.println(systemInitial.generationG1());
+			
+			System.out.println("Generator G2: ");
+			System.out.println(systemInitial.generationG2());
+			
+			System.out.println("Generator P");
+			System.out.println(systemInitial.generationP());
+			
+			HashChain h = new HashChain();
+			System.out.println("Generator secret key");
+			System.out.println(systemInitial.s);
+			
+			//Calculate kP
+			
+			System.out.println("W: "+systemInitial.generationW());
+			
+			// Wi
 
-			// SimulateControlPanel simulatePanel =
-			// VanetSimStart.getMainControlPanel().getSimulatePanel();
-			String x = "Infomation system : + Public key : xx \n";
-			String y = "Vehicle 1 : uj1 = yyy \n";
-			String z = "Vehicle 2 : uj1 = yyy \n";
-			scenarioInformationTextArea_.setText(x + y + z);
+			System.out.println("Wi: "+systemInitial.generationWi());
+			
+			
+			System.out.println("----------------------------TA generation for Scenarios1---------------------------");
+
+
+			
+			String stringSystemInitial = "Prime Number: "+p + "\n" 
+			+ "Generator G1: " + systemInitial.generationG1() + "\n" 
+			+ "Generator G2: " + systemInitial.generationG2() +  "\n" 
+			+ "Generator P: (3,21)" + "\n" 
+			+ "Generator secret key: " + systemInitial.s + "\n" 
+			+ "W: "+systemInitial.generationW() + "\n" 
+			+ "Wi: "+systemInitial.generationWi() + "\n"
+			+ "-------------TA generation for Scenarios1--------" + "\n"
+			+ "Secret key for Vehicle: ";
+			
+			scenarioInformationTextArea_.setText(stringSystemInitial);
 			Renderer.getInstance().setScenario(1);
 		} else if ("scenario2".equals(command)) {
 			Renderer.getInstance().setScenario(2);

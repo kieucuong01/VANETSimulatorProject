@@ -28,7 +28,7 @@ public class SystemInitial {
 	EllipticCurve el = new EllipticCurve(a, b, p);
 	GeneratorPrime ge= new GeneratorPrime(103);
 	Point P = new Point(Px,Py,1);
-	long s = ge.randomNumber();
+	public long s = ge.randomNumber();
 	HashChain h = new HashChain();
 	GenerateZ gZ = new GenerateZ();
 	List<Integer> a1 = gZ.generateZp(103); // Zp = {1->p-1}

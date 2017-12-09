@@ -72,7 +72,7 @@ public class CallVehicle {
 		
 		System.out.println("----------------------------TA generation for Scenarios1---------------------------");
 
-		System.out.println("Secret key for Vehicle: "+systemInitial.generationVj());
+		System.out.println("Secret key for Vehicle: "+systemInitial.generationForV());
 		
 		
 		

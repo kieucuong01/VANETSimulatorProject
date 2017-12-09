@@ -1,0 +1,22 @@
+Dec 09, 2017 4:30:36 PM global
+CONFIG: 0MB accelerated VRAM found.
+Dec 09, 2017 4:30:53 PM vanetsim.map.Map loadMap
+FINE: Loading map from map.xml
+Dec 09, 2017 4:30:56 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 09, 2017 4:31:03 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from scenario1.xml
+Dec 09, 2017 4:31:03 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 09, 2017 4:31:06 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 09, 2017 4:31:06 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 09, 2017 4:31:06 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 09, 2017 4:31:06 PM Worker startX:0 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 09, 2017 4:31:06 PM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 09, 2017 4:31:06 PM Worker startX:1 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.

@@ -45,6 +45,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import vanetsim.ErrorLog;
+import vanetsim.Scenario1;
 import vanetsim.localization.Messages;
 import vanetsim.map.Junction;
 import vanetsim.map.Map;
@@ -343,6 +344,13 @@ public final class Renderer{
 	/** The font used for displaying the cluster ID. */
 	private final Font clusterIDFont_ = new Font("SansSerif", Font.PLAIN, 1000); //$NON-NLS-1$
 	
+	
+	Scenario1 scenario1 = new Scenario1();
+
+	String vehicle1Pseudonum = "Pseudonum :[(31,4),(23,43),(10,5)]" ;
+//	String vehicle2Pseudonum = "Pseudonum :" + scenario1.computePseu();
+	String vehicle2Pseudonum = "Pseudonum :[(32,23),(43,45),(30,0)]";
+
 	/**
 	 * Private constructor in order to disable instancing. Creates the blocking images.
 	 */
@@ -571,10 +579,15 @@ public final class Renderer{
 									if(vehicle.isActive() && vehicle.getX() >= mapMinX_ && vehicle.getX() <= mapMaxX_ && vehicle.getY() >= mapMinY_ && vehicle.getY() <= mapMaxY_){		//only paint when necessary and within paint area
 										g2d.drawImage(speechBuble_, vehicle.getX()-VEHICLE_SIZE/2,  vehicle.getY()-20000, 20000, 20000, null);
 										if (scenario_ == 1) {
-										g2d.drawString("Message : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 15000);
-										g2d.drawString("Psudonym : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 12500);
-										g2d.drawString("Private key : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 10000);
-										g2d.drawString("Private key : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 7500);
+											if(k == 0) {
+												g2d.drawString(vehicle1Pseudonum, vehicle.getX() - 2000, vehicle.getY() - 15000);
+											}
+											else if(k == 1){
+												g2d.drawString(vehicle2Pseudonum, vehicle.getX() - 2000, vehicle.getY() - 15000);
+											}
+//										g2d.drawString("Psudonym : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 12500);
+//										g2d.drawString("Private key : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 10000);
+//										g2d.drawString("Private key : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 7500);
 										}
 										
 										if (scenario_ == 2) {

@@ -1,0 +1,58 @@
+Dec 09, 2017 4:31:47 PM global
+CONFIG: 0MB accelerated VRAM found.
+Dec 09, 2017 4:32:04 PM vanetsim.map.Map loadMap
+FINE: Loading map from map.xml
+Dec 09, 2017 4:32:08 PM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 09, 2017 4:32:48 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from scenario1.xml
+Dec 09, 2017 4:32:48 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 09, 2017 4:32:49 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 09, 2017 4:32:49 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 09, 2017 4:32:49 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 09, 2017 4:32:49 PM Worker startX:0 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 09, 2017 4:32:49 PM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 09, 2017 4:32:49 PM Worker startX:1 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 09, 2017 4:33:33 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 09, 2017 4:33:35 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 09, 2017 4:33:36 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 09, 2017 4:33:44 PM Worker startX:0 startY:0 run
+FINEST: Worker thread exited.
+Dec 09, 2017 4:33:44 PM Worker startX:1 startY:1 run
+FINEST: Worker thread exited.
+Dec 09, 2017 4:33:44 PM Worker startX:0 startY:1 run
+FINEST: Worker thread exited.
+Dec 09, 2017 4:33:44 PM Worker startX:1 startY:0 run
+FINEST: Worker thread exited.
+Dec 09, 2017 4:33:44 PM vanetsim.scenario.Scenario load
+FINE: Loading scenario from scenario1.xml
+Dec 09, 2017 4:33:44 PM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 09, 2017 4:34:29 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 09, 2017 4:34:29 PM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 09, 2017 4:34:29 PM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 09, 2017 4:34:29 PM Worker startX:0 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 09, 2017 4:34:29 PM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 09, 2017 4:34:29 PM Worker startX:1 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 09, 2017 4:35:09 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 09, 2017 4:36:01 PM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 09, 2017 4:36:10 PM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
