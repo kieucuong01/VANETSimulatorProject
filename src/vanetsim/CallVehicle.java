@@ -45,58 +45,34 @@ public class CallVehicle {
 	
 	public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 		// TODO Auto-generated method stub
+		SystemInitial systemInitial = new SystemInitial();
+		Scenario1 scenario1 = new Scenario1();
 		System.out.println("Prime Number: "+p );
-		EllipticCurve el = new EllipticCurve(a, b, p);
 		System.out.println("Generator G1: ");
-		System.out.println(el.listMust(new Point(Gx, Gy, 1)));
+		System.out.println(systemInitial.generationG1());
 		
 		System.out.println("Generator G2: ");
-		System.out.println(el.listMust(new Point(Gx2,Gy2,1)));
+		System.out.println(systemInitial.generationG2());
 		
 		System.out.println("Generator P");
-		System.out.println(el.listPoints());
+		System.out.println(systemInitial.generationP());
+		
 		HashChain h = new HashChain();
 		System.out.println("Generator secret key");
-		GeneratorPrime ge= new GeneratorPrime(103);
-		System.out.println(ge.randomNumber());
+		System.out.println(systemInitial.s);
 		
 		//Calculate kP
 		
-		Point P = new Point(Px,Py,1);
-		Point result = P.mult(ge.randomNumber(), a, b, p);
-		System.out.println("W: "+result);
+		System.out.println("W: "+systemInitial.generationW());
 		
 		// Wi
-		Point Qi = new Point(h.H1(4, 10).getX(),h.H1(4, 10).getY(),1);
-		Point result1 = Qi.mult(ge.randomNumber(), a, b, p);
-		System.out.println("Wi: "+result1);
+
+		System.out.println("Wi: "+systemInitial.generationWi());
 		
 		
 		System.out.println("----------------------------TA generation for Scenarios1---------------------------");
-		GenerateZ gZ = new GenerateZ();
-		List<Integer> a1 = gZ.generateZp(103);
-		System.out.println(a1);
-		int a = (int)ge.randomNumber();
-		System.out.println("Secret key for Vehicle: "+a1.get(a));
-		List<Integer> listU = new ArrayList<Integer>();
-		
-		listU.add(a1.get(a));
-		listU.add(a1.get(a+1));
-		listU.add(a1.get(a+2));
-		
-		double Px2 = (double)Px;
-		double Py2 = (double)Py;
-		
-		System.out.println("List U: "+listU);
-		List<CredentialDTO> listS = new ArrayList<>();
-		for(int i =0;i<3;i++){
-			double s = (double)1/(ge.randomNumber()+listU.get(i));
-			double Sxij = Px2*s;
-			double Syij = Py2*s;
-			CredentialDTO credentialDTO = new CredentialDTO(Sxij,Syij);
-			listS.add(credentialDTO);
-			System.out.println("X: "+listS.get(i).getX() +" Y: "+listS.get(i).getY());
-		}
+
+		System.out.println("Secret key for Vehicle: "+systemInitial.generationVj());
 		
 		
 		
@@ -105,20 +81,14 @@ public class CallVehicle {
 		
 		
 		System.out.println("-------------------------------------------Scenarios1--------------------------------------------");
-		List<Point> listPseu = new ArrayList<>();
-		for(int i =0;i<3;i++){
-			Point kq = Qi.mult(listU.get(i), a, b, p);
-			Point p = new Point(kq.getX(),kq.getY());
-			listPseu.add(p);
-			System.out.println("Pseudonym "+ i +": "+kq);
-		}
+		System.out.println("Pseudonum" + scenario1.computePseu());
 		
 		
 		System.out.println("-------------------------------------------Message Signing----------------------------------------");
 
 		
 		
-		Point pseuxj= listPseu.get(ge.randomNumber(3)-1);
+		/*Point pseuxj= listPseu.get(ge.randomNumber(3)-1);
 		System.out.println(pseuxj);
 		int alpha = (int)ge.randomNumber();
 		int r = (int)ge.randomNumber();
@@ -191,7 +161,7 @@ public class CallVehicle {
         } catch (IOException e) {
             e.printStackTrace();
         }
-		
+		*/
 		
 		
 		
