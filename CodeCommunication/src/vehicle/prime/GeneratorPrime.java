@@ -8,6 +8,7 @@ public class GeneratorPrime {
 	public GeneratorPrime(int prime){
 		this.prime = prime;
 	}
+	//random so nguyen to
 	
 	public long randomPrime(){
 		long num;
@@ -28,11 +29,20 @@ public class GeneratorPrime {
 		}
 		return true;
 	}
+	// random number trong khoang so nguyen to
 	public long randomNumber(){
 		long num;
 		Random random = new Random();
 		int a = (int)randomPrime();
 		num = random.nextInt(a)+1;
+		
+		return num;
+	}
+	
+	public int randomNumber(int number){
+		int num;
+		Random random = new Random();
+		num = random.nextInt(number)+1;
 		
 		return num;
 	}

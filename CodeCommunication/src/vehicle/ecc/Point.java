@@ -24,7 +24,10 @@ public class Point {
         y = P.getY();
         z = P.getZ();
     }
-    
+    public Point(long x, long y){
+    	this.x = x;
+    	this.y = y;
+    }
     public long getX() {
     	return x;
     }

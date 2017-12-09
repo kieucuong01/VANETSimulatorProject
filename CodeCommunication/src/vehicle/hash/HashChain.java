@@ -12,8 +12,10 @@ import vehicle.ecc.Point;
 
 public class HashChain {
 	EllipticCurve eclip = new EllipticCurve(7,12,103);
-	public CyclicDTO H3(int secret, int prime){
-		int s = secret% prime;
+	
+	//Hash to choose 
+	public CyclicDTO H1(long secret, long prime){
+		int s = (int)(secret% prime);
 		CyclicDTO cyclicDTO = new CyclicDTO();
 		cyclicDTO = eclip.listMust1(new Point(13, 2, 1)).get(s);
 		return cyclicDTO;
@@ -40,7 +42,7 @@ public class HashChain {
 					a +=j;
 			}
 		}
-		System.out.println(a);
+		System.out.println("a "+a);
 		System.out.println(a%prime);
 	}
 }
