@@ -229,7 +229,7 @@ public final class VanetSimStart implements Runnable {
 				loggerFormat = "txt"; //$NON-NLS-1$
 			}
 
-			ErrorLog.setParameters(loggerLevel, loggerDir, loggerFormat);
+			//ErrorLog.setParameters(loggerLevel, loggerDir, loggerFormat);
 
 			if (loggerTrashtime < 0 || loggerTrashtime > 365000) {
 				loggerTrashtime = (long) 365000;

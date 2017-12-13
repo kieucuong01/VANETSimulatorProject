@@ -72,12 +72,9 @@ public class CallVehicle {
 		
 		System.out.println("----------------------------TA generation for Scenarios1---------------------------");
 
-		System.out.println("Secret key for Vehicle: "+systemInitial.generationVj());
+		System.out.println("Secret key for Vehicle: "+systemInitial.generationForV());
 		
 		
-		
-		System.out.println(h.H1(4, 10).getX());
-		System.out.println(h.H1(4, 10).getY());
 		
 		
 		System.out.println("-------------------------------------------Scenarios1--------------------------------------------");
@@ -85,7 +82,7 @@ public class CallVehicle {
 		
 		
 		System.out.println("-------------------------------------------Message Signing----------------------------------------");
-
+		//System.out.println("Pseudonum" + scenario1.computePseu1());
 		
 		
 		/*Point pseuxj= listPseu.get(ge.randomNumber(3)-1);

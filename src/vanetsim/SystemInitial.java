@@ -102,7 +102,10 @@ public class SystemInitial {
 	
 	public String generationForV(){
 		SystemInitial si = new SystemInitial();
-		String Cre = "Secret key: "+si.generationU() +" Credential: " +si.generationForV();
+		String Cre = "Secret key: "+si.generationU() +" Credential: " ;
+		for(int i =0;i<3;i++){
+			Cre += "("+si.generationVj().get(i).getX()+","+si.generationVj().get(i).getY()+"),";
+		}
 		
 		return Cre;
 	}
