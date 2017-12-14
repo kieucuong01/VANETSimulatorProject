@@ -358,6 +358,10 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			++c.gridy;
 			add(jLabel1, c);
 
+			JLabel messageTitle = new JLabel("Enter message"); //$NON-NLS-1$
+			++c.gridy;
+			add(messageTitle, c);
+
 			// TextField Message
 			messageTextField_ = new JTextField();
 			messageTextField_.setText("");
@@ -366,18 +370,50 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			add(messageTextField_, c);
 
 			// Button start
-			JPanel scenario2 = new JPanel(new CardLayout());
-			scenario2.add(ButtonCreator.getJButton("start.png", "scenario2",
-					Messages.getString("SimulateControlPanel.scenario2"), this), "scenario2");
+			// Case 1
+			JLabel case1Title = new JLabel("Vehicle send message using valid psuedonum"); //$NON-NLS-1$
 			++c.gridy;
-			c.gridwidth = 1;
-			add(scenario2, c);
+			add(case1Title, c);
+
+			JPanel scenario2_success = new JPanel(new CardLayout());
+			scenario2_success.add(ButtonCreator.getJButton("start.png", "scenario2_success",
+					Messages.getString("SimulateControlPanel.scenario2"), this), "scenario2_success");
+			++c.gridy;
+			c.gridwidth = 2;
+			add(scenario2_success, c);
 			
+			// Case 2
+			JLabel case2Title = new JLabel("Vehicle send message using invalid psuedonum"); //$NON-NLS-1$
+			++c.gridy;
+			add(case2Title, c);
+			
+			JPanel scenario2_fail = new JPanel(new CardLayout());
+			scenario2_fail.add(ButtonCreator.getJButton("start.png", "scenario2_fail",
+					Messages.getString("SimulateControlPanel.scenario2"), this), "scenario2_fail");
+			++c.gridy;
+			c.gridwidth = 2;
+			add(scenario2_fail, c);
+
+
+
 			// text area for display of information running scenario
 			c.gridwidth = 2;
 			scenarioInformationTextArea_ = new JTextArea(20, 1);
 			scenarioInformationTextArea_.setEditable(false);
 			scenarioInformationTextArea_.setLineWrap(true);
+			
+			SystemInitial systemInitial = new SystemInitial();
+			Scenario1 scenario1 = new Scenario1();			
+			HashChain h = new HashChain();
+			
+			String stringSystemInitial = "Prime Number: "+p + "\n" 
+			+ "Generator G1: " + systemInitial.generationG1() + "\n" 
+			+ "Generator G2: " + systemInitial.generationG2() +  "\n" 
+			+ "Generator P: (3,21)" + "\n" 
+			+ "Generator secret key: " + systemInitial.s + "\n" 
+			+ "W: "+systemInitial.generationW() + "\n" 
+			+ "Wi: "+systemInitial.generationWi() + "\n";			
+
 			JScrollPane scrolltext1 = new JScrollPane(scenarioInformationTextArea_);
 			scrolltext1.setOpaque(false);
 			scrolltext1.getViewport().setOpaque(false);
@@ -595,33 +631,8 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 		} else if ("scenario1".equals(command)) {
 			// TODO Auto-generated method stub
 			SystemInitial systemInitial = new SystemInitial();
-			Scenario1 scenario1 = new Scenario1();
-			System.out.println("Prime Number: "+p );
-			System.out.println("Generator G1: ");
-			System.out.println(systemInitial.generationG1());
-			
-			System.out.println("Generator G2: ");
-			System.out.println(systemInitial.generationG2());
-			
-			System.out.println("Generator P");
-			System.out.println(systemInitial.generationP());
-			
+			Scenario1 scenario1 = new Scenario1();			
 			HashChain h = new HashChain();
-			System.out.println("Generator secret key");
-			System.out.println(systemInitial.s);
-			
-			//Calculate kP
-			
-			System.out.println("W: "+systemInitial.generationW());
-			
-			// Wi
-
-			System.out.println("Wi: "+systemInitial.generationWi());
-			
-			
-			System.out.println("----------------------------TA generation for Scenarios1---------------------------");
-
-
 			
 			String stringSystemInitial = "Prime Number: "+p + "\n" 
 			+ "Generator G1: " + systemInitial.generationG1() + "\n" 
@@ -635,9 +646,29 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			
 			scenarioInformationTextArea_.setText(stringSystemInitial);
 			Renderer.getInstance().setScenario(1);
-		} else if ("scenario2".equals(command)) {
-			Renderer.getInstance().setScenario(2);
-		} else if ("scenario3".equals(command)) {
+		} else if ("scenario2_success".equals(command)) {
+			String vehicle1Pseudonum = "Vehicle with Pseudonum (31,4)" ;
+			String vehicle2Pseudonum = "Vehicle with Pseudonum (32,23)";
+
+			String text = scenarioInformationTextArea_.getText() + "\n"
+						+ vehicle1Pseudonum + " send message \"" + messageTextField_.getText() + "\" to " 
+						+ vehicle2Pseudonum;
+			scenarioInformationTextArea_.setText(text);
+
+			Renderer.getInstance().setScenario2(messageTextField_.getText(), true);
+		}
+		else if ("scenario2_fail".equals(command)) {
+			String vehicle1Pseudonum = "Vehicle with Pseudonum (2,4)" ;
+			String vehicle2Pseudonum = "Vehicle with Pseudonum (32,23)";
+
+			String text = scenarioInformationTextArea_.getText() + "\n"
+						+ vehicle1Pseudonum + " send message \"" + messageTextField_.getText() + "\" to " 
+						+ vehicle2Pseudonum;
+			scenarioInformationTextArea_.setText(text);
+
+			Renderer.getInstance().setScenario2(messageTextField_.getText(), false);
+		}
+		else if ("scenario3".equals(command)) {
 			Renderer.getInstance().setScenario(3);
 		}
 

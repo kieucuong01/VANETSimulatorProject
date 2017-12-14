@@ -1,0 +1,36 @@
+Dec 10, 2017 11:27:12 AM global
+CONFIG: 0MB accelerated VRAM found.
+Dec 10, 2017 11:27:27 AM vanetsim.map.Map loadMap
+FINE: Loading map from map.xml
+Dec 10, 2017 11:27:30 AM vanetsim.map.Map load
+FINE: Finished loading map.
+Dec 10, 2017 11:27:47 AM vanetsim.scenario.Scenario load
+FINE: Loading scenario from scenario1.xml
+Dec 10, 2017 11:27:47 AM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.
+Dec 10, 2017 11:27:49 AM vanetsim.simulation.SimulationMaster startThread
+FINER: Simulation started.
+Dec 10, 2017 11:27:49 AM vanetsim.simulation.SimulationMaster run
+FINE: Preparing simulation with 8 threads. Detected 1820 MB of free heap memory.
+Dec 10, 2017 11:27:49 AM Worker startX:0 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 10, 2017 11:27:49 AM Worker startX:0 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 10, 2017 11:27:49 AM Worker startX:1 startY:0 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 10, 2017 11:27:49 AM Worker startX:1 startY:1 Worker constructor
+FINEST: Created worker thread with 1 regions.
+Dec 10, 2017 11:28:27 AM vanetsim.simulation.SimulationMaster stopThread
+FINER: Simulation stopped.
+Dec 10, 2017 11:28:27 AM Worker startX:0 startY:0 run
+FINEST: Worker thread exited.
+Dec 10, 2017 11:28:27 AM Worker startX:1 startY:0 run
+FINEST: Worker thread exited.
+Dec 10, 2017 11:28:27 AM Worker startX:0 startY:1 run
+FINEST: Worker thread exited.
+Dec 10, 2017 11:28:27 AM Worker startX:1 startY:1 run
+FINEST: Worker thread exited.
+Dec 10, 2017 11:28:27 AM vanetsim.scenario.Scenario load
+FINE: Loading scenario from scenario2.xml
+Dec 10, 2017 11:28:27 AM vanetsim.scenario.Scenario load
+FINE: Finished loading scenario.

@@ -219,6 +219,10 @@ public final class Renderer{
 
 	private int scenario_ = -1;
 
+	private String messages_ = "";
+
+	private boolean didSendSuccess_ = false;
+
 	/** <code>true</code> if all blockings shall be showed, else <code>false</code>. */
 	private boolean showAllBlockings_;
 	
@@ -347,9 +351,8 @@ public final class Renderer{
 	
 	Scenario1 scenario1 = new Scenario1();
 
-	String vehicle1Pseudonum = "Pseudonum :[(31,4),(23,43),(10,5)]" ;
-//	String vehicle2Pseudonum = "Pseudonum :" + scenario1.computePseu();
-	String vehicle2Pseudonum = "Pseudonum :[(32,23),(43,45),(30,0)]";
+	String vehicle1Pseudonum = "[(31,4),(23,43),(10,5)]" ;
+	String vehicle2Pseudonum = "[(32,23),(43,45),(30,0)]";
 
 	/**
 	 * Private constructor in order to disable instancing. Creates the blocking images.
@@ -578,12 +581,16 @@ public final class Renderer{
 									vehicle = vehicles[k];
 									if(vehicle.isActive() && vehicle.getX() >= mapMinX_ && vehicle.getX() <= mapMaxX_ && vehicle.getY() >= mapMinY_ && vehicle.getY() <= mapMaxY_){		//only paint when necessary and within paint area
 										g2d.drawImage(speechBuble_, vehicle.getX()-VEHICLE_SIZE/2,  vehicle.getY()-20000, 20000, 20000, null);
+										WayPoint destinationPoint = vehicle.getDestinations().getFirst();
+
 										if (scenario_ == 1) {
-											if(k == 0) {
-												g2d.drawString(vehicle1Pseudonum, vehicle.getX() - 2000, vehicle.getY() - 15000);
+											if(destinationPoint.getX() == 87687 && destinationPoint.getY() == 29878) {
+												g2d.drawString("Psudonym : \n", vehicle.getX() - 2000, vehicle.getY() - 15000);
+												g2d.drawString(vehicle1Pseudonum, vehicle.getX() - 2000, vehicle.getY() - 12500);
 											}
-											else if(k == 1){
-												g2d.drawString(vehicle2Pseudonum, vehicle.getX() - 2000, vehicle.getY() - 15000);
+											else{
+												g2d.drawString("Psudonym : \n", vehicle.getX() - 2000, vehicle.getY() - 15000);
+												g2d.drawString(vehicle2Pseudonum, vehicle.getX() - 2000, vehicle.getY() - 12500);
 											}
 //										g2d.drawString("Psudonym : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 12500);
 //										g2d.drawString("Private key : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 10000);
@@ -591,11 +598,26 @@ public final class Renderer{
 										}
 										
 										if (scenario_ == 2) {
-											g2d.drawString("Message : yyyy \n", vehicle.getX() - 2000, vehicle.getY() - 15000);
-											g2d.drawString("Psudonym : yyyy \n", vehicle.getX() - 2000, vehicle.getY() - 12500);
-											g2d.drawString("Private key : yy \n", vehicle.getX() - 2000, vehicle.getY() - 10000);
-											g2d.drawString("Private key : yyyyy \n", vehicle.getX() - 2000, vehicle.getY() - 7500);
+											if (didSendSuccess_) {
+												if(destinationPoint.getX() == 87687 && destinationPoint.getY() == 29878) {
+													g2d.drawString("Send success", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+													g2d.drawString("Message: " + messages_, vehicle.getX() - 2000,
+															vehicle.getY() - 12500);
+												} else {
+													g2d.drawString("Sending...", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+												}
+											} else {
+												if(destinationPoint.getX() == 87687 && destinationPoint.getY() == 29878) {
+													g2d.drawString("Send fail", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+												} else {
+													g2d.drawString("Sending...", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+												}
 											}
+										}
 										
 										if (scenario_ == 3) {
 											g2d.drawString("Message : zzz \n", vehicle.getX() - 2000, vehicle.getY() - 15000);
@@ -1696,6 +1718,7 @@ public final class Renderer{
 
 	/**
 	 * Gets a marked vehicle.
+	 * 
 	 *
 	 */
 	public synchronized Vehicle getMarkedVehicle(){
@@ -1814,6 +1837,12 @@ public final class Renderer{
 
 	public void setScenario(int scenanior){
 		scenario_ = scenanior;
+	}
+	
+	public void setScenario2(String message, boolean didSendSuccess){
+		scenario_ = 2;
+		messages_ = message;
+		didSendSuccess_ = didSendSuccess;
 	}
 	/**
 	 * If you want to show all blockings.
