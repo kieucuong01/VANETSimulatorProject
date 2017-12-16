@@ -583,7 +583,21 @@ public final class Renderer{
 										g2d.drawImage(speechBuble_, vehicle.getX()-VEHICLE_SIZE/2,  vehicle.getY()-20000, 20000, 20000, null);
 										WayPoint destinationPoint = vehicle.getDestinations().getFirst();
 
-										if (scenario_ == 1) {
+										if (scenario_ == 12) {
+											if(destinationPoint.getX() == 87687 && destinationPoint.getY() == 29878) {
+												g2d.drawString("Sending...", vehicle.getX() - 2000, vehicle.getY() - 15000);
+												g2d.drawString("SN1 = 1111", vehicle.getX() - 2000, vehicle.getY() - 12500);
+												g2d.drawString("ID = 93K1-07526", vehicle.getX() - 2000, vehicle.getY() - 10000);
+
+											}
+											else{
+												g2d.drawString("Sending...", vehicle.getX() - 2000, vehicle.getY() - 15000);
+												g2d.drawString("SN1 = 222", vehicle.getX() - 2000, vehicle.getY() - 12500);
+												g2d.drawString("ID = 63K1-01236", vehicle.getX() - 2000, vehicle.getY() - 10000);
+											}
+										}
+										
+										else if (scenario_ == 13) {
 											if(destinationPoint.getX() == 87687 && destinationPoint.getY() == 29878) {
 												g2d.drawString("Psudonym : \n", vehicle.getX() - 2000, vehicle.getY() - 15000);
 												g2d.drawString(vehicle1Pseudonum, vehicle.getX() - 2000, vehicle.getY() - 12500);
@@ -592,9 +606,6 @@ public final class Renderer{
 												g2d.drawString("Psudonym : \n", vehicle.getX() - 2000, vehicle.getY() - 15000);
 												g2d.drawString(vehicle2Pseudonum, vehicle.getX() - 2000, vehicle.getY() - 12500);
 											}
-//										g2d.drawString("Psudonym : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 12500);
-//										g2d.drawString("Private key : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 10000);
-//										g2d.drawString("Private key : xxxx \n", vehicle.getX() - 2000, vehicle.getY() - 7500);
 										}
 										
 										if (scenario_ == 2) {
@@ -792,7 +803,7 @@ public final class Renderer{
 			g2d.setPaint(Color.black);
 			g2d.setFont(timeFont_);
 			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_OFF);
-			g2d.drawString(FORMATTER.format(timePassed_) + " ms", 5 ,10 ); //$NON-NLS-1$
+			//g2d.drawString(FORMATTER.format(timePassed_) + " ms", 5 ,10 ); //$NON-NLS-1$
 
 			//draw silent period sign
 			if(Vehicle.isSilent_period()){

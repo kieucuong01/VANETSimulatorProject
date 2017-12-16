@@ -331,14 +331,46 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			jLabel1 = new JLabel("<html><b>" + Messages.getString("SimulateControlPanel.scenario1") + "</b></html>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 			++c.gridy;
 			add(jLabel1, c);
-
-			JPanel scenario1 = new JPanel(new CardLayout());
-
-			scenario1.add(ButtonCreator.getJButton("start.png", "scenario1",
-					Messages.getString("SimulateControlPanel.scenario1"), this), "scenario1");
+	
+			// Step1
+			JLabel step1Title = new JLabel("Step 1: System initialization"); //$NON-NLS-1$
 			++c.gridy;
-			c.gridwidth = 1;
-			add(scenario1, c);
+			add(step1Title, c);
+
+			JPanel scenario1_step1 = new JPanel(new CardLayout());
+
+			scenario1_step1.add(ButtonCreator.getJButton("start.png", "scenario1_step1",
+					Messages.getString("SimulateControlPanel.scenario1_step1"), this), "scenario1_step1");
+			++c.gridy;
+			c.gridwidth = 2;
+			add(scenario1_step1, c);
+			
+			// Step2
+			JLabel step2Title = new JLabel("Setp 2: Generate credential"); //$NON-NLS-1$
+			++c.gridy;
+			add(step2Title, c);
+
+			JPanel scenario1_step2 = new JPanel(new CardLayout());
+
+			scenario1_step2.add(ButtonCreator.getJButton("start.png", "scenario1_step2",
+					Messages.getString("SimulateControlPanel.scenario1_step2"), this), "scenario1_step2");
+			++c.gridy;
+			c.gridwidth = 2;
+			add(scenario1_step2, c);
+			
+			// Step3
+			JLabel step3Title = new JLabel("Step 3: Pseudonym sef-generation"); //$NON-NLS-1$
+			++c.gridy;
+			add(step3Title, c);
+
+			JPanel scenario1_step3 = new JPanel(new CardLayout());
+
+			scenario1_step3.add(ButtonCreator.getJButton("start.png", "scenario1_step3",
+					Messages.getString("SimulateControlPanel.scenario1_step3"), this), "scenario1_step3");
+			++c.gridy;
+			c.gridwidth = 2;
+			add(scenario1_step3, c);
+			
 			
 			// text area for display of information running scenario
 			c.gridwidth = 2;
@@ -628,7 +660,7 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			VanetSimStart.getMainControlPanel().tooglePanel();
 		} else if ("guimode".equals(command)) {
 			repaintGUI();
-		} else if ("scenario1".equals(command)) {
+		} else if ("scenario1_step1".equals(command)) {
 			// TODO Auto-generated method stub
 			SystemInitial systemInitial = new SystemInitial();
 			Scenario1 scenario1 = new Scenario1();			
@@ -638,15 +670,27 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			+ "Generator G1: " + systemInitial.generationG1() + "\n" 
 			+ "Generator G2: " + systemInitial.generationG2() +  "\n" 
 			+ "Generator P: (3,21)" + "\n" 
-			+ "Generator secret key: " + systemInitial.s + "\n" 
+			+ "Generator secret key s: " + systemInitial.s + "\n" 
 			+ "W: "+systemInitial.generationW() + "\n" 
-			+ "Wi: "+systemInitial.generationWi() + "\n"
-			+ "-------------TA generation for Scenarios1--------" + "\n"
-			+ "Secret key for Vehicle: ";
+			+ "Wi: "+systemInitial.generationWi() + "\n";
 			
 			scenarioInformationTextArea_.setText(stringSystemInitial);
-			Renderer.getInstance().setScenario(1);
-		} else if ("scenario2_success".equals(command)) {
+		} else if ("scenario1_step2".equals(command)) {
+			// TODO Auto-generated method stub
+			SystemInitial systemInitial = new SystemInitial();
+
+			String text = scenarioInformationTextArea_.getText() + "\n"
+					+ "-------------TA generation for Scenarios1--------" + "\n"
+					+ "Secret key for Vehicle 1: \n " + systemInitial.generationForV() + "\n"
+					+ "Secret key for Vehicle 2: \n " + systemInitial.generationForV() + "\n";
+			scenarioInformationTextArea_.setText(text);
+			Renderer.getInstance().setScenario(12);
+		}else if ("scenario1_step3".equals(command)) {
+			// TODO Auto-generated method stub			
+			Renderer.getInstance().setScenario(13);
+		}
+		
+		else if ("scenario2_success".equals(command)) {
 			String vehicle1Pseudonum = "Vehicle with Pseudonum (31,4)" ;
 			String vehicle2Pseudonum = "Vehicle with Pseudonum (32,23)";
 

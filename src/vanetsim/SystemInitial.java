@@ -28,7 +28,7 @@ public class SystemInitial {
 	EllipticCurve el = new EllipticCurve(a, b, p);
 	GeneratorPrime ge= new GeneratorPrime(103);
 	Point P = new Point(Px,Py,1);
-	public long s = ge.randomNumber();
+	public long s = 64;
 	HashChain h = new HashChain();
 	GenerateZ gZ = new GenerateZ();
 	List<Integer> a1 = gZ.generateZp(103); // Zp = {1->p-1}
@@ -102,7 +102,7 @@ public class SystemInitial {
 	
 	public String generationForV(){
 		SystemInitial si = new SystemInitial();
-		String Cre = "Secret key: "+si.generationU() +" Credential: " ;
+		String Cre = si.generationU() + " \n Credential: " ;
 		for(int i =0;i<3;i++){
 			Cre += "("+si.generationVj().get(i).getX()+","+si.generationVj().get(i).getY()+"),";
 		}
