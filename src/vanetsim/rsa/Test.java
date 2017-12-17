@@ -34,6 +34,9 @@ public class Test {
         String RL = String.valueOf(point);
         String time = RL+ dt.getDate();
         
+        String s = "(" + RL + "," + dt.getDate()+")";
+        System.out.println(s);
+
         String signature = en.hashRSA(time);
         
         // Ma hoa RL

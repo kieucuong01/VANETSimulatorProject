@@ -459,6 +459,10 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			++c.gridy;
 			add(jLabel1, c);
 
+			JLabel messageTitle = new JLabel("Enter message"); //$NON-NLS-1$
+			++c.gridy;
+			add(messageTitle, c);
+
 			// TextField Message
 			messageTextField_ = new JTextField();
 			messageTextField_.setText("");
@@ -466,14 +470,32 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			++c.gridy;
 			add(messageTextField_, c);
 
-			// Button start 
-			JPanel scenario3 = new JPanel(new CardLayout());
+			JLabel step1Title = new JLabel("Step 1: Send message"); //$NON-NLS-1$
+			++c.gridy;
+			add(step1Title, c);
 
-			scenario3.add(ButtonCreator.getJButton("start.png", "scenario3",
-					Messages.getString("SimulateControlPanel.scenario3"), this), "scenario3");
+			// Button start 
+			JPanel scenario3_step1 = new JPanel(new CardLayout());
+
+			scenario3_step1.add(ButtonCreator.getJButton("start.png", "scenario3_step1",
+					Messages.getString("SimulateControlPanel.scenario3_step1"), this), "scenario3_step1");
 			++c.gridy;
 			c.gridwidth = 1;
-			add(scenario3, c);
+			add(scenario3_step1, c);
+			
+			JLabel step2Title = new JLabel("Step 2: Connect to community"); //$NON-NLS-1$
+			++c.gridy;
+			add(step2Title, c);
+
+			// Button start 
+			JPanel scenario3_step2 = new JPanel(new CardLayout());
+
+			scenario3_step2.add(ButtonCreator.getJButton("start.png", "scenario3_step2",
+					Messages.getString("SimulateControlPanel.scenario3_step2"), this), "scenario3_step2");
+			++c.gridy;
+			c.gridwidth = 1;
+			add(scenario3_step2, c);
+
 			
 			// text area for display of information running scenario
 			c.gridwidth = 2;
@@ -712,8 +734,11 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 
 			Renderer.getInstance().setScenario2(messageTextField_.getText(), false);
 		}
-		else if ("scenario3".equals(command)) {
-			Renderer.getInstance().setScenario(3);
+		else if ("scenario3_step1".equals(command)) {
+			Renderer.getInstance().setScenario(31);
+		}
+		else if ("scenario3_step2".equals(command)) {
+			Renderer.getInstance().setScenario(32);
 		}
 
 	}
