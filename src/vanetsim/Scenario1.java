@@ -25,11 +25,12 @@ public class Scenario1 {
 	SystemInitial si = new SystemInitial();
 	HashChain h = new HashChain();
 	
-	public List<Point> computePseu(){
+	public List<Point> computePseu(List<Integer> listV){
 		Point Qi = new Point(h.H1(4, 10).getX(), h.H1(4, 10).getY(), 1);
 		List<Point> listPseu = new ArrayList<>();
 		for(int i =0;i<3;i++){
-			Point kq = Qi.mult(si.generationU().get(i), a, b, p);
+		
+			Point kq = Qi.mult(listV.get(i), a, b, p);
 			Point p = new Point(kq.getX(),kq.getY());
 			listPseu.add(p);
 			System.out.println("Pseudonym "+ i +": "+kq);

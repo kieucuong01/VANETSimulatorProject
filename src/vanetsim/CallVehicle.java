@@ -72,14 +72,16 @@ public class CallVehicle {
 		
 		System.out.println("----------------------------TA generation for Scenarios1---------------------------");
 
-		System.out.println("Secret key for Vehicle: "+systemInitial.generationForV());
+		//System.out.println("Secret key for Vehicle: "+systemInitial.generationForV());
+				
+		System.out.println("----------------------------Vehicle 1---------------------------------------------");
+		List<Integer> V1 = new ArrayList<>();
+		V1 = systemInitial.generationU();
+		//System.out.println("Pseudonum" + scenario1.computePseu());
 		
-		
-		
-		
-		System.out.println("-------------------------------------------Scenarios1--------------------------------------------");
-		System.out.println("Pseudonum" + scenario1.computePseu());
-		
+		System.out.println("-----------------------------Vehicle 2 --------------------------------------------");
+		List<Integer> V2 = new ArrayList<>();
+		V2 = systemInitial.generationU();
 		
 		System.out.println("-------------------------------------------Message Signing----------------------------------------");
 		//System.out.println("Pseudonum" + scenario1.computePseu1());
