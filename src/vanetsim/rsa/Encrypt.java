@@ -11,7 +11,7 @@ import java.security.PublicKey;
 import javax.crypto.Cipher;
 
 public class Encrypt {
-	 public static KeyPair buildKeyPair() throws NoSuchAlgorithmException {
+	 public KeyPair buildKeyPair() throws NoSuchAlgorithmException  {
 	        final int keySize = 2048;
 	        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
 	        keyPairGenerator.initialize(keySize);      
@@ -38,9 +38,7 @@ public class Encrypt {
 	         String hashtext = number.toString(16);
 	         while (hashtext.length() < 32) {
 	             hashtext = "0" + hashtext;
-	         }
-	         System.out.println(hashtext);
-	         
+	         }	         
 	         return hashtext;
 	    }
 	    
