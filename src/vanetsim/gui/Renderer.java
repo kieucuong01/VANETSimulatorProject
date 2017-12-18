@@ -819,11 +819,51 @@ public final class Renderer {
 														vehicle.getY() - 15000);
 												g2d.drawString("Computing...", vehicle.getX() - 2000,
 														vehicle.getY() - 12500);
-												g2d.drawString("Received message successfully...",
+												g2d.drawString("Accept connect...",
 														vehicle.getX() - 2000, vehicle.getY() - 10000);
-											} else {
-												g2d.drawString("Sent RL...", vehicle.getX() - 2000,
+											}
+											 else if (destinationPoint.getX() == 87445 && destinationPoint.getY() == 30075){
+													g2d.drawString("Sent RL :", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+													g2d.drawString("[(10, 2), (10, 5), (10, 6)]", vehicle.getX() - 2000,
+															vehicle.getY() - 12500);
+													g2d.drawString("Time : 9:00", vehicle.getX() - 2000,
+															vehicle.getY() - 10000);
+												}
+											else {
+												g2d.drawString("Sent RL :", vehicle.getX() - 2000,
 														vehicle.getY() - 15000);
+												g2d.drawString("[(10, 2), (10, 5), (10, 6),(2, 17)]", vehicle.getX() - 2000,
+														vehicle.getY() - 12500);
+												g2d.drawString("Time : 10:00", vehicle.getX() - 2000,
+														vehicle.getY() - 10000);
+											}
+										}
+										
+										if (scenario_ == 33) {
+											if (destinationPoint.getX() == 115254 && destinationPoint.getY() == 65679) {
+												g2d.drawString("Received RL...", vehicle.getX() - 2000,
+														vehicle.getY() - 15000);
+												g2d.drawString("Computing...", vehicle.getX() - 2000,
+														vehicle.getY() - 12500);
+												g2d.drawString("Reject connect...",
+														vehicle.getX() - 2000, vehicle.getY() - 10000);
+											}
+											 else if (destinationPoint.getX() == 87445 && destinationPoint.getY() == 30075){
+													g2d.drawString("Sent RL :", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+													g2d.drawString("[(10, 2), (10, 5), (10, 6)]", vehicle.getX() - 2000,
+															vehicle.getY() - 12500);
+													g2d.drawString("Time : 9:00", vehicle.getX() - 2000,
+															vehicle.getY() - 10000);
+												}
+											else {
+												g2d.drawString("Sent RL :", vehicle.getX() - 2000,
+														vehicle.getY() - 15000);
+												g2d.drawString("[(10, 2), (10, 5), (10, 6),(2, 17)]", vehicle.getX() - 2000,
+														vehicle.getY() - 12500);
+												g2d.drawString("Time : 10:00", vehicle.getX() - 2000,
+														vehicle.getY() - 10000);
 											}
 										}
 									}

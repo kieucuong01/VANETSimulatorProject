@@ -459,7 +459,7 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			++c.gridy;
 			add(jLabel1, c);
 
-			JLabel messageTitle = new JLabel("Enter message"); //$NON-NLS-1$
+			JLabel messageTitle = new JLabel("Enter pseudonym"); //$NON-NLS-1$
 			++c.gridy;
 			add(messageTitle, c);
 
@@ -738,7 +738,12 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			Renderer.getInstance().setScenario(31);
 		}
 		else if ("scenario3_step2".equals(command)) {
-			Renderer.getInstance().setScenario(32);
+			String pseudonym = messageTextField_.getText();
+			if(pseudonym.equals("2,17"))
+				Renderer.getInstance().setScenario(33);
+			else {
+				Renderer.getInstance().setScenario(32);
+			}
 		}
 
 	}

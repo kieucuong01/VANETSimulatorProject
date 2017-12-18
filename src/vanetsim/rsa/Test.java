@@ -15,6 +15,10 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 import vanetsim.ecc.Point;
 
 public class Test {
+	// Danh sach RL cu
+	List<Point> listOldRL_ = new ArrayList<Point>();
+    List<Point> listLatestRL_ = new ArrayList<Point>();
+    DateAndTime dt = new DateAndTime();
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
@@ -72,8 +76,8 @@ public class Test {
         
         
         System.out.println("-----Scenarios 3-------");
-        System.out.println("Danh sach RL moi cu: "+listRL);
-        System.out.println("Danh sach RL moi moi: "+listLatest);
+        System.out.println("Danh sach RL cu: "+listRL);
+        System.out.println("Danh sach RL moi: "+listLatest);
         
         List<List<Point>> listCheck = new ArrayList<>();
         listCheck.add(listRL); // RL cu
@@ -163,6 +167,46 @@ public class Test {
 		return false;
 	}
 	
-	
+	public Boolean isInRevocationList(Point psuedonym) throws Exception {
+        //RL Mo phong
+        //Danh sach RL ban dau
+		listOldRL_.add(new Point(10,2));
+		listOldRL_.add(new Point(10,5));
+		listOldRL_.add(new Point(10,6));
+       
+        //danh sach RL moi,
+        // TA them pseudonym vao RL
+		listLatestRL_.add(new Point(10,2));
+		listLatestRL_.add(new Point(10,5));
+		listLatestRL_.add(new Point(10,6));
+		listLatestRL_.add(new Point(3,9));
+		
+		// String RL 
+		String lastedRLString = String.valueOf(listLatestRL_);
+		String oldRLString = String.valueOf(listLatestRL_);
+		
+		//String DateTime
+		String lastedTimeString = dt.getNewDate();
+		String oldTimeString = dt.getOldDate();
+		
+        String hashMD5LastedRLnTime = this.hashRL(lastedRLString+lastedTimeString);
+        String hashMD5OldRLnTime = this.hashRL(oldRLString+oldTimeString);
+
+		//sinh cap khoa trong RSA
+		Encrypt en = new Encrypt();
+        KeyPair keyPair = en.buildKeyPair();
+        PublicKey pubKey = keyPair.getPublic();
+        PrivateKey privateKey = keyPair.getPrivate();
+
+        byte[] secretLastedRLnTime = this.signature(privateKey, hashMD5LastedRLnTime);
+
+        byte[] secretOldRLnTime = this.signature(privateKey, hashMD5LastedRLnTime);
+
+        
+        String result = this.veryfiRL(pubKey, secretLastedRLnTime , hashMD5LastedRLnTime);
+
+        
+        return true;
+	}
 	
 }
