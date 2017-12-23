@@ -28,7 +28,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -49,9 +51,11 @@ import javax.swing.event.ChangeListener;
 
 import vanetsim.ErrorLog;
 import vanetsim.Scenario1;
+import vanetsim.Scenario3;
 import vanetsim.SystemInitial;
 import vanetsim.VanetSimStart;
 import vanetsim.VanetSimStarter;
+import vanetsim.ecc.Point;
 import vanetsim.gui.DrawingArea;
 import vanetsim.gui.Renderer;
 import vanetsim.gui.helpers.ButtonCreator;
@@ -706,7 +710,12 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 					+ "Secret key for Vehicle 1: \n " + systemInitial.generationForV() + "\n"
 					+ "Secret key for Vehicle 2: \n " + systemInitial.generationForV() + "\n";
 			scenarioInformationTextArea_.setText(text);
-			Renderer.getInstance().setScenario(12);
+			
+			Scenario1 scenario1 = new Scenario1();
+			String setOfPsudonym1 = scenario1.getSetPsuedonymVehicle1();
+			String setOfPsudonym2 = scenario1.getSetPsuedonymVehicle2();
+
+			Renderer.getInstance().setScenario12(setOfPsudonym1, setOfPsudonym2);
 		}else if ("scenario1_step3".equals(command)) {
 			// TODO Auto-generated method stub			
 			Renderer.getInstance().setScenario(13);
@@ -735,15 +744,24 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			Renderer.getInstance().setScenario2(messageTextField_.getText(), false);
 		}
 		else if ("scenario3_step1".equals(command)) {
+			String pseudonym = messageTextField_.getText();
+
+			Scenario3 scenario3 = new Scenario3();
+			scenario3.initialRL();
+			scenario3.initialSenderVehicle(pseudonym);
+			// Get lasted RL
+			List<Point> lastedRL = scenario3.getLastedRL();
+			String lastedRLString = String.valueOf(lastedRL);
+			
+			String text = " List revocation list broadcast from TA:" + lastedRLString;
+			
+			scenarioInformationTextArea_.setText(text);
+
 			Renderer.getInstance().setScenario(31);
 		}
 		else if ("scenario3_step2".equals(command)) {
 			String pseudonym = messageTextField_.getText();
-			if(pseudonym.equals("2,17"))
-				Renderer.getInstance().setScenario(33);
-			else {
-				Renderer.getInstance().setScenario(32);
-			}
+			Renderer.getInstance().setScenario32(pseudonym);;
 		}
 
 	}

@@ -47,32 +47,32 @@ public class CallVehicle {
 		// TODO Auto-generated method stub
 		SystemInitial systemInitial = new SystemInitial();
 		Scenario1 scenario1 = new Scenario1();
-		System.out.println("Prime Number: "+p );
-		System.out.println("Generator G1: ");
-		System.out.println(systemInitial.generationG1());
-		
-		System.out.println("Generator G2: ");
-		System.out.println(systemInitial.generationG2());
-		
-		System.out.println("Generator P");
-		System.out.println(systemInitial.generationP());
-		
-		HashChain h = new HashChain();
-		System.out.println("Generator secret key");
-		System.out.println(systemInitial.s);
-		
-		//Calculate kP
-		
-		System.out.println("W: "+systemInitial.generationW());
-		
-		// Wi
-
-		System.out.println("Wi: "+systemInitial.generationWi());
-		
-		
-		System.out.println("----------------------------TA generation for Scenarios1---------------------------");
-
-		System.out.println("Secret key for Vehicle: "+systemInitial.generationForV());
+//		System.out.println("Prime Number: "+p );
+//		System.out.println("Generator G1: ");
+//		System.out.println(systemInitial.generationG1());
+//		
+//		System.out.println("Generator G2: ");
+//		System.out.println(systemInitial.generationG2());
+//		
+//		System.out.println("Generator P");
+//		System.out.println(systemInitial.generationP());
+//		
+//		HashChain h = new HashChain();
+//		System.out.println("Generator secret key");
+//		System.out.println(systemInitial.s);
+//		
+//		//Calculate kP
+//		
+//		System.out.println("W: "+systemInitial.generationW());
+//		
+//		// Wi
+//
+//		System.out.println("Wi: "+systemInitial.generationWi());
+//		
+//		
+//		System.out.println("----------------------------TA generation for Scenarios1---------------------------");
+//
+//		System.out.println("Secret key for Vehicle: "+systemInitial.generationForV());
 		
 		
 		
@@ -83,14 +83,15 @@ public class CallVehicle {
 		System.out.println("----------------------------Vehicle 1---------------------------------------------");
 		List<Integer> V1 = new ArrayList<>();
 		V1 = systemInitial.generationU();
-		//System.out.println("Pseudonum" + scenario1.computePseu());
+		System.out.println("Pseudonum" + scenario1.computePseu(V1));
 		
 		System.out.println("-----------------------------Vehicle 2 --------------------------------------------");
 		List<Integer> V2 = new ArrayList<>();
 		V2 = systemInitial.generationU();
-		
-		System.out.println("-------------------------------------------Message Signing----------------------------------------");
-		//System.out.println("Pseudonum" + scenario1.computePseu1());
+		System.out.println("Pseudonum" + scenario1.computePseu(V2));
+
+//		System.out.println("-------------------------------------------Message Signing----------------------------------------");
+//		System.out.println("Pseudonum" + scenario1.computePseu1());
 		
 		
 		/*Point pseuxj= listPseu.get(ge.randomNumber(3)-1);

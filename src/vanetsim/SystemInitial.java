@@ -32,7 +32,6 @@ public class SystemInitial {
 	HashChain h = new HashChain();
 	GenerateZ gZ = new GenerateZ();
 	List<Integer> a1 = gZ.generateZp(103); // Zp = {1->p-1}
-	int uxj = (int)ge.randomNumber();
 	
 	public String generationG1(){
 		String G1 = el.listMust(new Point(Gx, Gy, 1));
@@ -73,6 +72,7 @@ public class SystemInitial {
 	}
 	public List<Integer> generationU(){ //U <==> gia tri nuy cua moi xe
 		List<Integer> listU = new ArrayList<Integer>();
+		int uxj = (int)ge.randomNumber();
 		
 		listU.add(a1.get(uxj));
 		listU.add(a1.get(uxj+1));

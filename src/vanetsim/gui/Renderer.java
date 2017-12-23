@@ -35,6 +35,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.TreeMap;
 import java.util.concurrent.CyclicBarrier;
 
@@ -46,6 +47,8 @@ import javax.swing.JFrame;
 
 import vanetsim.ErrorLog;
 import vanetsim.Scenario1;
+import vanetsim.Scenario3;
+import vanetsim.ecc.Point;
 import vanetsim.localization.Messages;
 import vanetsim.map.Junction;
 import vanetsim.map.Map;
@@ -284,6 +287,8 @@ public final class Renderer {
 
 	private String messages_ = "";
 
+	private String senderPsudonym_ = "";
+
 	private boolean didSendSuccess_ = false;
 
 	/**
@@ -437,8 +442,8 @@ public final class Renderer {
 
 	Scenario1 scenario1 = new Scenario1();
 
-	String vehicle1Pseudonum = "[(31,4),(23,43),(10,5)]";
-	String vehicle2Pseudonum = "[(32,23),(43,45),(30,0)]";
+	String vehicle1Pseudonum = "";
+	String vehicle2Pseudonum = "";
 
 	/**
 	 * Private constructor in order to disable instancing. Creates the blocking
@@ -812,59 +817,59 @@ public final class Renderer {
 
 											}
 										}
-
 										if (scenario_ == 32) {
+											Scenario3 scenario3 = new Scenario3();
+											// Set up public key and private key
+											scenario3.initialFromTA();
+											// Set up simulation of RLs
+											scenario3.initialRL();
+											// Set up sender vehicle
+											scenario3.initialSenderVehicle(senderPsudonym_);
+											// Get lasted RL
+											List<Point> lastedRL = scenario3.getLastedRL();
+											byte[] encyptRL = scenario3.getEncyptRLNTimeString(lastedRL,
+													scenario3.dt.getNewDate());
+											String lastedRLString = String.valueOf(lastedRL);
+
 											if (destinationPoint.getX() == 115254 && destinationPoint.getY() == 65679) {
 												g2d.drawString("Received RL...", vehicle.getX() - 2000,
 														vehicle.getY() - 15000);
 												g2d.drawString("Computing...", vehicle.getX() - 2000,
 														vehicle.getY() - 12500);
-												g2d.drawString("Accept connect...",
-														vehicle.getX() - 2000, vehicle.getY() - 10000);
-											}
-											 else if (destinationPoint.getX() == 87445 && destinationPoint.getY() == 30075){
-													g2d.drawString("Sent RL :", vehicle.getX() - 2000,
-															vehicle.getY() - 15000);
-													g2d.drawString("[(10, 2), (10, 5), (10, 6)]", vehicle.getX() - 2000,
-															vehicle.getY() - 12500);
-													g2d.drawString("Time : 9:00", vehicle.getX() - 2000,
-															vehicle.getY() - 10000);
+												// CHECK IS RL IS BELONG TO SYSTEM
+												Boolean isBelongToSystem = scenario3.isRLBelongToSystem(
+														scenario3.pubKey, encyptRL, lastedRLString,
+														scenario3.dt.getNewDate());
+												if (isBelongToSystem) {
+													Boolean isVehicleInRL = scenario3.isVehicleInRL(lastedRL,
+															scenario3.psudonymSender);
+													if (isVehicleInRL) {
+														g2d.drawString("Reject connect " + scenario3.psudonymSender,
+																vehicle.getX() - 2000, vehicle.getY() - 10000);
+													} else {
+														g2d.drawString("Accept connect " + scenario3.psudonymSender,
+																vehicle.getX() - 2000, vehicle.getY() - 10000);
+													}
+												} else {
+													System.out.println("RL khong dc sinh ra boi TA");
 												}
-											else {
+											} else if (destinationPoint.getX() == 87445
+													&& destinationPoint.getY() == 30075) {
 												g2d.drawString("Sent RL :", vehicle.getX() - 2000,
 														vehicle.getY() - 15000);
-												g2d.drawString("[(10, 2), (10, 5), (10, 6),(2, 17)]", vehicle.getX() - 2000,
-														vehicle.getY() - 12500);
-												g2d.drawString("Time : 10:00", vehicle.getX() - 2000,
-														vehicle.getY() - 10000);
-											}
-										}
-										
-										if (scenario_ == 33) {
-											if (destinationPoint.getX() == 115254 && destinationPoint.getY() == 65679) {
-												g2d.drawString("Received RL...", vehicle.getX() - 2000,
-														vehicle.getY() - 15000);
-												g2d.drawString("Computing...", vehicle.getX() - 2000,
-														vehicle.getY() - 12500);
-												g2d.drawString("Reject connect...",
+												g2d.drawString(String.valueOf(scenario3.listOldRL_),
+														vehicle.getX() - 2000, vehicle.getY() - 12500);
+												g2d.drawString("Time " + scenario3.dt.getOldDate(),
 														vehicle.getX() - 2000, vehicle.getY() - 10000);
-											}
-											 else if (destinationPoint.getX() == 87445 && destinationPoint.getY() == 30075){
-													g2d.drawString("Sent RL :", vehicle.getX() - 2000,
-															vehicle.getY() - 15000);
-													g2d.drawString("[(10, 2), (10, 5), (10, 6)]", vehicle.getX() - 2000,
-															vehicle.getY() - 12500);
-													g2d.drawString("Time : 9:00", vehicle.getX() - 2000,
-															vehicle.getY() - 10000);
-												}
-											else {
+											} else {
 												g2d.drawString("Sent RL :", vehicle.getX() - 2000,
 														vehicle.getY() - 15000);
-												g2d.drawString("[(10, 2), (10, 5), (10, 6),(2, 17)]", vehicle.getX() - 2000,
-														vehicle.getY() - 12500);
-												g2d.drawString("Time : 10:00", vehicle.getX() - 2000,
-														vehicle.getY() - 10000);
+												g2d.drawString(String.valueOf(scenario3.listLatestRL_),
+														vehicle.getX() - 2000, vehicle.getY() - 12500);
+												g2d.drawString("Time " + scenario3.dt.getNewDate(),
+														vehicle.getX() - 2000, vehicle.getY() - 10000);
 											}
+
 										}
 									}
 								}
@@ -2286,7 +2291,17 @@ public final class Renderer {
 	public void setScenario(int scenanior) {
 		scenario_ = scenanior;
 	}
-
+	public void setScenario12(String setOfPsudonym1, String setOfPsudonym2 ) {
+		scenario_ = 12;
+		vehicle1Pseudonum = setOfPsudonym1;
+		vehicle2Pseudonum = setOfPsudonym2;
+	}
+	
+	public void setScenario32(String psudonym) {
+		scenario_ = 32;
+		senderPsudonym_ = psudonym;
+	}
+	
 	public void setScenario2(String message, boolean didSendSuccess) {
 		scenario_ = 2;
 		messages_ = message;
