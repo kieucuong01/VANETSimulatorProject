@@ -81,15 +81,16 @@ public class SystemInitial {
 		
 		return listU;
 	}
-	public List<CredentialDTO> generationVj(){
+	
+	public List<CredentialDTO> generationVj(List<Integer>listU){
 		SystemInitial si = new SystemInitial();
 		double Px2 = (double)Px;
 		double Py2 = (double)Py;
 		
-		System.out.println("List U: "+si.generationU());
+		System.out.println("List U: "+listU);
 		List<CredentialDTO> listS = new ArrayList<>();
 		for(int i =0;i<3;i++){
-			double k = (double)1/(s+si.generationU().get(i));
+			double k = (double)1/(s+listU.get(i));
 			double Sxij = Px2*k;
 			double Syij = Py2*k;
 			CredentialDTO credentialDTO = new CredentialDTO(Sxij,Syij);
@@ -101,10 +102,11 @@ public class SystemInitial {
 	}
 	
 	public String generationForV(){
+		List<Integer>listU =  this.generationU();
 		SystemInitial si = new SystemInitial();
-		String Cre = si.generationU() + " \n Credential: " ;
+		String Cre = listU + " \n Credential: " ;
 		for(int i =0;i<3;i++){
-			Cre += "("+si.generationVj().get(i).getX()+","+si.generationVj().get(i).getY()+"),";
+			Cre += "("+si.generationVj(listU).get(i).getX()+","+si.generationVj(listU).get(i).getY()+"),";
 		}
 		
 		return Cre;

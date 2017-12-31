@@ -47,10 +47,9 @@ public class CallVehicle {
 		// TODO Auto-generated method stub
 		SystemInitial systemInitial = new SystemInitial();
 		Scenario1 scenario1 = new Scenario1();
-//		System.out.println("Prime Number: "+p );
-//		System.out.println("Generator G1: ");
-//		System.out.println(systemInitial.generationG1());
-//		
+		System.out.println("Prime Number: "+p );
+		System.out.println("Generator G1: ");
+		System.out.println(systemInitial.generationG1());		
 //		System.out.println("Generator G2: ");
 //		System.out.println(systemInitial.generationG2());
 //		
@@ -85,11 +84,16 @@ public class CallVehicle {
 		V1 = systemInitial.generationU();
 		System.out.println("Pseudonum" + scenario1.computePseu(V1));
 		
+		HashChain h = new HashChain();
 		System.out.println("-----------------------------Vehicle 2 --------------------------------------------");
 		List<Integer> V2 = new ArrayList<>();
 		V2 = systemInitial.generationU();
 		System.out.println("Pseudonum" + scenario1.computePseu(V2));
 
+		EllipticCurve el = new EllipticCurve(a, b, p);
+		long Xc = el.listMust1(new Point(Gx2,Gy2,1)).get(6).getX();
+		long Yc = el.listMust1(new Point(Gx2,Gy2,1)).get(6).getY();
+		
 //		System.out.println("-------------------------------------------Message Signing----------------------------------------");
 //		System.out.println("Pseudonum" + scenario1.computePseu1());
 		

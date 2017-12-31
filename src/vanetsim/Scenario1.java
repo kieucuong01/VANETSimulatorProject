@@ -5,8 +5,10 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
+import vanetsim.ecc.EllipticCurve;
 import vanetsim.ecc.Point;
 import vanetsim.hash.HashChain;
+import vanetsim.prime.GeneratorPrime;
 
 public class Scenario1 {
 
@@ -39,6 +41,36 @@ public class Scenario1 {
 		List<Integer> V2 = new ArrayList<>();
 		V2 = systemInitial.generationU();
 		System.out.println(scenario1.getSetPsuedonymVehicle2());
+		
+		//Messgae signing.
+		GeneratorPrime ge = new GeneratorPrime(103);
+		EllipticCurve el = new EllipticCurve(a, b, p);
+		long Xc = el.listMust1(new Point(Gx2,Gy2,1)).get(6).getX();
+		long Yc = el.listMust1(new Point(Gx2,Gy2,1)).get(6).getY();
+		HashChain h = new HashChain();
+		int alpha = (int)ge.randomNumber();
+		int r = (int)ge.randomNumber();
+		int r1 = (int)ge.randomNumber();
+		
+		Point Qi = new Point(h.H1(4, 10).getX(), h.H1(4, 10).getY(), 1);
+		System.out.println(alpha +", "+r+", "+r1);
+		Point T = new Point(2,3);
+		long RGx = r*Qi.getX();
+		long RGy = r*Qi.getY();
+		Point RG = new Point(RGx,RGy);
+		System.out.println("x: "+RG);
+		
+		int c = (int)(Xc*Xc+Yc*Yc)%103;
+		System.out.println("c: "+c);
+		
+		int z1 = c*alpha + r1;
+		
+		System.out.println(z1);
+		
+		int z2 = c*9 + r;
+		System.out.println(z2);
+		
+		System.out.println("Qi: "+Qi);
 	}
 
 	public List<Point> computePseu(List<Integer> listV) {
