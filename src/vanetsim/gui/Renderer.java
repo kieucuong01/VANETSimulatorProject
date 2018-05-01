@@ -289,6 +289,12 @@ public final class Renderer {
 
 	private String senderPsudonym_ = "";
 
+	private boolean isVerifySignatureSuccess_ = false;
+
+	private boolean isRLBelongToSystem_ = false;
+
+	private boolean isVehicleInRL_ = false;
+	
 	private boolean didSendSuccess_ = false;
 
 	/**
@@ -444,6 +450,7 @@ public final class Renderer {
 
 	String vehicle1Pseudonum = "";
 	String vehicle2Pseudonum = "";
+
 
 	/**
 	 * Private constructor in order to disable instancing. Creates the blocking
@@ -805,72 +812,84 @@ public final class Renderer {
 											}
 										}
 
-										if (scenario_ == 31) {
-											if (destinationPoint.getX() == 87445 && destinationPoint.getY() == 30075) {
-												g2d.drawString("Sending...", vehicle.getX() - 2000,
-														vehicle.getY() - 15000);
-											} else if (destinationPoint.getX() == 115254
-													&& destinationPoint.getY() == 65679) {
-												g2d.drawString("Checking...", vehicle.getX() - 2000,
-														vehicle.getY() - 15000);
-											} else {
+											if (scenario_ == 31) {
+												if (destinationPoint.getX() == 87445
+														&& destinationPoint.getY() == 30075) {
+													g2d.drawString("Sending...", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+												} else if (destinationPoint.getX() == 115254
+														&& destinationPoint.getY() == 65679) {
+													g2d.drawString("Checking...", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+												} else {
+
+												}
+											}
+											if (scenario_ == 32) {
+												// Get lasted RL
+												Scenario3 scenario3 = new Scenario3();
+												// Set up simulation of RLs
+												scenario3.initialRL();
+
+												if (destinationPoint.getX() == 115254
+														&& destinationPoint.getY() == 65679) {
+													g2d.drawString("Received RL...", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+													g2d.drawString("Computing...", vehicle.getX() - 2000,
+															vehicle.getY() - 12500);
+													if (isRLBelongToSystem_) {
+														if (isVehicleInRL_) {
+															g2d.drawString("Reject connect " + senderPsudonym_,
+																	vehicle.getX() - 2000, vehicle.getY() - 10000);
+														} else {
+															g2d.drawString("Verifying Signature... ",
+																	vehicle.getX() - 2000, vehicle.getY() - 10000);
+														}
+													} else {
+														System.out.println("RL khong dc sinh ra boi TA");
+													}
+												} else if (destinationPoint.getX() == 87445
+														&& destinationPoint.getY() == 30075) {
+													g2d.drawString("Sent RL :", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+													g2d.drawString(String.valueOf(scenario3.listOldRL_),
+															vehicle.getX() - 2000, vehicle.getY() - 12500);
+													g2d.drawString("Time " + scenario3.dt.getOldDate(),
+															vehicle.getX() - 2000, vehicle.getY() - 10000);
+												} else {
+													g2d.drawString("Sent RL :", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+													g2d.drawString(String.valueOf(scenario3.listLatestRL_),
+															vehicle.getX() - 2000, vehicle.getY() - 12500);
+													g2d.drawString("Time " + scenario3.dt.getNewDate(),
+															vehicle.getX() - 2000, vehicle.getY() - 10000);
+												}
 
 											}
-										}
-										if (scenario_ == 32) {
-											Scenario3 scenario3 = new Scenario3();
-											// Set up public key and private key
-											scenario3.initialFromTA();
-											// Set up simulation of RLs
-											scenario3.initialRL();
-											// Set up sender vehicle
-											scenario3.initialSenderVehicle(senderPsudonym_);
-											// Get lasted RL
-											List<Point> lastedRL = scenario3.getLastedRL();
-											byte[] encyptRL = scenario3.getEncyptRLNTimeString(lastedRL,
-													scenario3.dt.getNewDate());
-											String lastedRLString = String.valueOf(lastedRL);
 
-											if (destinationPoint.getX() == 115254 && destinationPoint.getY() == 65679) {
-												g2d.drawString("Received RL...", vehicle.getX() - 2000,
-														vehicle.getY() - 15000);
-												g2d.drawString("Computing...", vehicle.getX() - 2000,
-														vehicle.getY() - 12500);
-												// CHECK IS RL IS BELONG TO SYSTEM
-												Boolean isBelongToSystem = scenario3.isRLBelongToSystem(
-														scenario3.pubKey, encyptRL, lastedRLString,
-														scenario3.dt.getNewDate());
-												if (isBelongToSystem) {
-													Boolean isVehicleInRL = scenario3.isVehicleInRL(lastedRL,
-															scenario3.psudonymSender);
-													if (isVehicleInRL) {
-														g2d.drawString("Reject connect " + scenario3.psudonymSender,
+											if (scenario_ == 33) {
+												if (destinationPoint.getX() == 115254
+														&& destinationPoint.getY() == 65679) {
+													g2d.drawString("Computing...", vehicle.getX() - 2000,
+															vehicle.getY() - 15000);
+													if (isVerifySignatureSuccess_) {
+														g2d.drawString("Verified Successfully... ",
+																vehicle.getX() - 2000, vehicle.getY() - 12500);
+														g2d.drawString("Accept connect " + senderPsudonym_,
 																vehicle.getX() - 2000, vehicle.getY() - 10000);
 													} else {
-														g2d.drawString("Accept connect " + scenario3.psudonymSender,
+														g2d.drawString("Verified Fail... ",
+																vehicle.getX() - 2000, vehicle.getY() - 12500);
+														g2d.drawString("Reject connect " + senderPsudonym_,
 																vehicle.getX() - 2000, vehicle.getY() - 10000);
 													}
 												} else {
-													System.out.println("RL khong dc sinh ra boi TA");
+													g2d.drawString("", vehicle.getX() - 2000, vehicle.getY() - 15000);
+													g2d.drawString("", vehicle.getX() - 2000, vehicle.getY() - 10000);
 												}
-											} else if (destinationPoint.getX() == 87445
-													&& destinationPoint.getY() == 30075) {
-												g2d.drawString("Sent RL :", vehicle.getX() - 2000,
-														vehicle.getY() - 15000);
-												g2d.drawString(String.valueOf(scenario3.listOldRL_),
-														vehicle.getX() - 2000, vehicle.getY() - 12500);
-												g2d.drawString("Time " + scenario3.dt.getOldDate(),
-														vehicle.getX() - 2000, vehicle.getY() - 10000);
-											} else {
-												g2d.drawString("Sent RL :", vehicle.getX() - 2000,
-														vehicle.getY() - 15000);
-												g2d.drawString(String.valueOf(scenario3.listLatestRL_),
-														vehicle.getX() - 2000, vehicle.getY() - 12500);
-												g2d.drawString("Time " + scenario3.dt.getNewDate(),
-														vehicle.getX() - 2000, vehicle.getY() - 10000);
-											}
-
+											
 										}
+
 									}
 								}
 							}
@@ -2291,17 +2310,26 @@ public final class Renderer {
 	public void setScenario(int scenanior) {
 		scenario_ = scenanior;
 	}
-	public void setScenario12(String setOfPsudonym1, String setOfPsudonym2 ) {
+
+	public void setScenario12(String setOfPsudonym1, String setOfPsudonym2) {
 		scenario_ = 12;
 		vehicle1Pseudonum = setOfPsudonym1;
 		vehicle2Pseudonum = setOfPsudonym2;
 	}
-	
-	public void setScenario32(String psudonym) {
+
+	public void setScenario32(String psudonym, boolean isRLBelongToSystem, boolean isVehicleInRL) {
 		scenario_ = 32;
 		senderPsudonym_ = psudonym;
+		isRLBelongToSystem_ = isRLBelongToSystem;
+		isVehicleInRL_ = isVehicleInRL;
 	}
-	
+
+	public void setScenario33(String psudonym, boolean isVerification) {
+		scenario_ = 33;
+		senderPsudonym_ = psudonym;
+		isVerifySignatureSuccess_ = isVerification;
+	}
+
 	public void setScenario2(String message, boolean didSendSuccess) {
 		scenario_ = 2;
 		messages_ = message;

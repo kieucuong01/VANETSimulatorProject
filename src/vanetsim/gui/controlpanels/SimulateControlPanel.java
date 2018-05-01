@@ -27,6 +27,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -78,13 +80,13 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 	private static long Gy = 2;
 	private static long Px = 9; /* initially P = (9, 17) */
 	private static long Py = 17;
-	private static long Gx2 = 13;  /*initial G2 = (13,5)*/
+	private static long Gx2 = 13; /* initial G2 = (13,5) */
 	private static long Gy2 = 5;
 	private static long Qx = 19; /* initially Q = (19, 0) */
 	private static long Qy = 0;
 	private static long k = 7; /* initially k = 33 */
 	private static int n = 100; /* initially n = 100 random curves */
-	
+
 	/** The necessary constant for serializing. */
 	private static final long serialVersionUID = 7292404190066585320L;
 
@@ -105,6 +107,9 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 
 	/** An area to display text information. */
 	private JTextField messageTextField_;
+
+	/** An area to display text information. */
+	private JTextField pseudonymTextField_;
 
 	/**
 	 * A checkbox to enable/disable the display of circles so that it's possible to
@@ -148,6 +153,10 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 	 */
 	private boolean dontReRenderZoom_ = false;
 
+	private boolean isVehicleInRL_ = true;
+
+	private List<Integer> listU_;
+
 	/** A Button to hide the sidebar */
 	private final JButton hideBar_;
 
@@ -186,8 +195,10 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 		hideBar_.setActionCommand("toogleBar");
 		panning.add(hideBar_, c); // $NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
-		//panning.add(ButtonCreator.getJButton("DE_flag.png", "de", "de", true, this), c); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		//panning.add(ButtonCreator.getJButton("EN_flag.png", "en", "en", true, this), c); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		// panning.add(ButtonCreator.getJButton("DE_flag.png", "de", "de", true, this),
+		// c); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		// panning.add(ButtonCreator.getJButton("EN_flag.png", "en", "en", true, this),
+		// c); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		c.gridwidth = 2;
 		add(panning, c);
 		++c.gridy;
@@ -261,7 +272,7 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 
 		c.gridx = 1;
 		add(ButtonCreator.getJButton("onestep.png", "onestep", Messages.getString("SimulateControlPanel.onestep"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				this), c); //$NON-NLS-4$
+				this), c); // $NON-NLS-4$
 
 		c.gridx = 0;
 		c.gridwidth = 2;
@@ -335,7 +346,7 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			jLabel1 = new JLabel("<html><b>" + Messages.getString("SimulateControlPanel.scenario1") + "</b></html>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 			++c.gridy;
 			add(jLabel1, c);
-	
+
 			// Step1
 			JLabel step1Title = new JLabel("Step 1: System initialization"); //$NON-NLS-1$
 			++c.gridy;
@@ -348,7 +359,7 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			++c.gridy;
 			c.gridwidth = 2;
 			add(scenario1_step1, c);
-			
+
 			// Step2
 			JLabel step2Title = new JLabel("Setp 2: Generate credential"); //$NON-NLS-1$
 			++c.gridy;
@@ -361,7 +372,7 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			++c.gridy;
 			c.gridwidth = 2;
 			add(scenario1_step2, c);
-			
+
 			// Step3
 			JLabel step3Title = new JLabel("Step 3: Pseudonym sef-generation"); //$NON-NLS-1$
 			++c.gridy;
@@ -374,8 +385,7 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			++c.gridy;
 			c.gridwidth = 2;
 			add(scenario1_step3, c);
-			
-			
+
 			// text area for display of information running scenario
 			c.gridwidth = 2;
 			scenarioInformationTextArea_ = new JTextArea(20, 1);
@@ -387,7 +397,7 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			c.weighty = 1.0;
 			++c.gridy;
 			add(scrolltext1, c);
-			
+
 		} else if (scenario == 2) {
 			// Scenario 2
 			jLabel1 = new JLabel("<html><b>" + Messages.getString("SimulateControlPanel.scenario2") + "</b></html>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
@@ -417,12 +427,12 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			++c.gridy;
 			c.gridwidth = 2;
 			add(scenario2_success, c);
-			
+
 			// Case 2
 			JLabel case2Title = new JLabel("Vehicle send message using invalid psuedonum"); //$NON-NLS-1$
 			++c.gridy;
 			add(case2Title, c);
-			
+
 			JPanel scenario2_fail = new JPanel(new CardLayout());
 			scenario2_fail.add(ButtonCreator.getJButton("start.png", "scenario2_fail",
 					Messages.getString("SimulateControlPanel.scenario2"), this), "scenario2_fail");
@@ -430,25 +440,20 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			c.gridwidth = 2;
 			add(scenario2_fail, c);
 
-
-
 			// text area for display of information running scenario
 			c.gridwidth = 2;
 			scenarioInformationTextArea_ = new JTextArea(20, 1);
 			scenarioInformationTextArea_.setEditable(false);
 			scenarioInformationTextArea_.setLineWrap(true);
-			
+
 			SystemInitial systemInitial = new SystemInitial();
-			Scenario1 scenario1 = new Scenario1();			
+			Scenario1 scenario1 = new Scenario1();
 			HashChain h = new HashChain();
-			
-			String stringSystemInitial = "Prime Number: "+p + "\n" 
-			+ "Generator G1: " + systemInitial.generationG1() + "\n" 
-			+ "Generator G2: " + systemInitial.generationG2() +  "\n" 
-			+ "Generator P: (3,21)" + "\n" 
-			+ "Generator secret key: " + systemInitial.s + "\n" 
-			+ "W: "+systemInitial.generationW() + "\n" 
-			+ "Wi: "+systemInitial.generationWi() + "\n";			
+
+			String stringSystemInitial = "Prime Number: " + p + "\n" + "Generator G1: " + systemInitial.generationG1()
+					+ "\n" + "Generator G2: " + systemInitial.generationG2() + "\n" + "Generator P: (3,21)" + "\n"
+					+ "Generator secret key: " + systemInitial.s + "\n" + "W: " + systemInitial.generationW() + "\n"
+					+ "Wi: " + systemInitial.generationWi() + "\n";
 
 			JScrollPane scrolltext1 = new JScrollPane(scenarioInformationTextArea_);
 			scrolltext1.setOpaque(false);
@@ -463,22 +468,35 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			++c.gridy;
 			add(jLabel1, c);
 
-			JLabel messageTitle = new JLabel("Enter pseudonym"); //$NON-NLS-1$
+			JLabel psdTitle = new JLabel("Enter sender's pseudonym"); //$NON-NLS-1$
+			++c.gridy;
+			add(psdTitle, c);
+
+			// TextField Message
+			pseudonymTextField_ = new JTextField();
+			pseudonymTextField_.setText("");
+			pseudonymTextField_.setColumns(20);
+			++c.gridy;
+			c.gridwidth = 2;
+			add(pseudonymTextField_, c);
+
+			JLabel messageTitle = new JLabel("Enter sender's message "); //$NON-NLS-1$
 			++c.gridy;
 			add(messageTitle, c);
-
 			// TextField Message
 			messageTextField_ = new JTextField();
 			messageTextField_.setText("");
 			messageTextField_.setColumns(20);
 			++c.gridy;
+			c.gridwidth = 2;
 			add(messageTextField_, c);
 
+			
+			// Step 1 : Send message
 			JLabel step1Title = new JLabel("Step 1: Send message"); //$NON-NLS-1$
 			++c.gridy;
 			add(step1Title, c);
 
-			// Button start 
 			JPanel scenario3_step1 = new JPanel(new CardLayout());
 
 			scenario3_step1.add(ButtonCreator.getJButton("start.png", "scenario3_step1",
@@ -486,12 +504,12 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			++c.gridy;
 			c.gridwidth = 1;
 			add(scenario3_step1, c);
-			
-			JLabel step2Title = new JLabel("Step 2: Connect to community"); //$NON-NLS-1$
+
+			// Step 2 : Revocation list checking
+			JLabel step2Title = new JLabel("Step 2: Revocation list checking"); //$NON-NLS-1$
 			++c.gridy;
 			add(step2Title, c);
 
-			// Button start 
 			JPanel scenario3_step2 = new JPanel(new CardLayout());
 
 			scenario3_step2.add(ButtonCreator.getJButton("start.png", "scenario3_step2",
@@ -500,12 +518,57 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 			c.gridwidth = 1;
 			add(scenario3_step2, c);
 
-			
+			// Step 3 : Signature verification
+			JLabel step3Title = new JLabel("Step 3: Signature verification"); //$NON-NLS-1$
+			++c.gridy;
+			add(step3Title, c);
+
+			JPanel scenario3_step3 = new JPanel(new CardLayout());
+
+			scenario3_step3.add(ButtonCreator.getJButton("start.png", "scenario3_step3",
+					Messages.getString("SimulateControlPanel.scenario3_step3"), this), "scenario3_step3");
+			++c.gridy;
+			c.gridwidth = 1;
+			add(scenario3_step3, c);
+
 			// text area for display of information running scenario
 			c.gridwidth = 2;
 			scenarioInformationTextArea_ = new JTextArea(20, 1);
 			scenarioInformationTextArea_.setEditable(false);
 			scenarioInformationTextArea_.setLineWrap(true);
+			// Initial system
+			SystemInitial systemInitial = new SystemInitial();
+			Scenario1 scenario1 = new Scenario1();
+			HashChain h = new HashChain();
+
+			// String stringSystemInitial = "Prime Number: " + p + "\n" + "Generator G1: " +
+			// systemInitial.generationG1()
+			// + "\n" + "Generator G2: " + systemInitial.generationG2() + "\n" + "Generator
+			// P: (3,21)" + "\n"
+			// + "Generator secret key s: " + systemInitial.s + "\n" + "W: " +
+			// systemInitial.generationW() + "\n"
+			// + "Wi: " + systemInitial.generationWi() + "\n";
+			listU_ = systemInitial.generationU();
+			String infomationValidVehicle = "Secret key ux,j: " + listU_;
+			String setOfValidPsudonym = "Pseudonyms pseux,j: " + scenario1.computePseu(listU_);
+
+			String infomationInvalidVehicle = "Secret key ux,j: [0,1,2]";
+			String setOfInvalidPsudonym = "Pseudonyms pseux,j: [(11, 32), (66, 45), (33, 0)]";
+
+			// Scenario3 inital
+			Scenario3 scenario3 = new Scenario3();
+			scenario3.initialRL();
+			// Get lasted RL
+			List<Point> lastedRL = scenario3.getLastedRL();
+			String lastedRLString = String.valueOf(lastedRL);
+
+			String RL = lastedRLString;
+
+			scenarioInformationTextArea_.setText("\n-------------Valid vehicle infomation--------\n"
+					+ infomationValidVehicle + "\n" + setOfValidPsudonym + "\n"
+					+ "\n-------------Invalid vehicle infomation--------\n" + infomationInvalidVehicle + "\n"
+					+ setOfInvalidPsudonym + "\n" + "\n-------------RL is broadcasted by TA--------\n" + RL);
+
 			JScrollPane scrolltext1 = new JScrollPane(scenarioInformationTextArea_);
 			scrolltext1.setOpaque(false);
 			scrolltext1.getViewport().setOpaque(false);
@@ -689,79 +752,148 @@ public final class SimulateControlPanel extends JPanel implements ActionListener
 		} else if ("scenario1_step1".equals(command)) {
 			// TODO Auto-generated method stub
 			SystemInitial systemInitial = new SystemInitial();
-			Scenario1 scenario1 = new Scenario1();			
+			Scenario1 scenario1 = new Scenario1();
 			HashChain h = new HashChain();
-			
-			String stringSystemInitial = "Prime Number: "+p + "\n" 
-			+ "Generator G1: " + systemInitial.generationG1() + "\n" 
-			+ "Generator G2: " + systemInitial.generationG2() +  "\n" 
-			+ "Generator P: (3,21)" + "\n" 
-			+ "Generator secret key s: " + systemInitial.s + "\n" 
-			+ "W: "+systemInitial.generationW() + "\n" 
-			+ "Wi: "+systemInitial.generationWi() + "\n";
-			
+
+			String stringSystemInitial = "Prime Number: " + p + "\n" + "Generator G1: " + systemInitial.generationG1()
+					+ "\n" + "Generator G2: " + systemInitial.generationG2() + "\n" + "Generator P: (3,21)" + "\n"
+					+ "Generator secret key s: " + systemInitial.s + "\n" + "W: " + systemInitial.generationW() + "\n"
+					+ "Wi: " + systemInitial.generationWi() + "\n";
+
 			scenarioInformationTextArea_.setText(stringSystemInitial);
 		} else if ("scenario1_step2".equals(command)) {
 			// TODO Auto-generated method stub
 			SystemInitial systemInitial = new SystemInitial();
 
 			String text = scenarioInformationTextArea_.getText() + "\n"
-					+ "-------------TA generation for Scenarios1--------" + "\n"
-					+ "Secret key for Vehicle 1: \n " + systemInitial.generationForV() + "\n"
-					+ "Secret key for Vehicle 2: \n " + systemInitial.generationForV() + "\n";
+					+ "-------------TA generation for Scenarios1--------" + "\n" + "Secret key for Vehicle 1: \n "
+					+ systemInitial.generationForV() + "\n" + "Secret key for Vehicle 2: \n "
+					+ systemInitial.generationForV() + "\n";
 			scenarioInformationTextArea_.setText(text);
-			
+
 			Scenario1 scenario1 = new Scenario1();
 			String setOfPsudonym1 = scenario1.getSetPsuedonymVehicle1();
 			String setOfPsudonym2 = scenario1.getSetPsuedonymVehicle2();
 
 			Renderer.getInstance().setScenario12(setOfPsudonym1, setOfPsudonym2);
-		}else if ("scenario1_step3".equals(command)) {
-			// TODO Auto-generated method stub			
+		} else if ("scenario1_step3".equals(command)) {
+			// TODO Auto-generated method stub
 			Renderer.getInstance().setScenario(13);
 		}
-		
+
 		else if ("scenario2_success".equals(command)) {
-			String vehicle1Pseudonum = "Vehicle with Pseudonum (31,4)" ;
+			String vehicle1Pseudonum = "Vehicle with Pseudonum (31,4)";
 			String vehicle2Pseudonum = "Vehicle with Pseudonum (32,23)";
 
-			String text = scenarioInformationTextArea_.getText() + "\n"
-						+ vehicle1Pseudonum + " send message \"" + messageTextField_.getText() + "\" to " 
-						+ vehicle2Pseudonum;
+			String text = scenarioInformationTextArea_.getText() + "\n" + vehicle1Pseudonum + " send message \""
+					+ messageTextField_.getText() + "\" to " + vehicle2Pseudonum;
 			scenarioInformationTextArea_.setText(text);
 
 			Renderer.getInstance().setScenario2(messageTextField_.getText(), true);
-		}
-		else if ("scenario2_fail".equals(command)) {
-			String vehicle1Pseudonum = "Vehicle with Pseudonum (2,4)" ;
+		} else if ("scenario2_fail".equals(command)) {
+			String vehicle1Pseudonum = "Vehicle with Pseudonum (2,4)";
 			String vehicle2Pseudonum = "Vehicle with Pseudonum (32,23)";
 
-			String text = scenarioInformationTextArea_.getText() + "\n"
-						+ vehicle1Pseudonum + " send message \"" + messageTextField_.getText() + "\" to " 
-						+ vehicle2Pseudonum;
+			String text = scenarioInformationTextArea_.getText() + "\n" + vehicle1Pseudonum + " send message \""
+					+ messageTextField_.getText() + "\" to " + vehicle2Pseudonum;
 			scenarioInformationTextArea_.setText(text);
 
 			Renderer.getInstance().setScenario2(messageTextField_.getText(), false);
-		}
-		else if ("scenario3_step1".equals(command)) {
-			String pseudonym = messageTextField_.getText();
+		} else if ("scenario3_step1".equals(command)) {
+			try {
+				Scenario3 scenario3 = new Scenario3();
 
-			Scenario3 scenario3 = new Scenario3();
-			scenario3.initialRL();
-			scenario3.initialSenderVehicle(pseudonym);
-			// Get lasted RL
-			List<Point> lastedRL = scenario3.getLastedRL();
-			String lastedRLString = String.valueOf(lastedRL);
-			
-			String text = " List revocation list broadcast from TA:" + lastedRLString;
-			
-			scenarioInformationTextArea_.setText(text);
+				String pseudonym = pseudonymTextField_.getText();
+				String message = messageTextField_.getText();
 
-			Renderer.getInstance().setScenario(31);
-		}
-		else if ("scenario3_step2".equals(command)) {
-			String pseudonym = messageTextField_.getText();
-			Renderer.getInstance().setScenario32(pseudonym);;
+				String[] parts = pseudonym.split(",");
+				String part1 = parts[0]; // 004
+				String part2 = parts[1]; // 034556
+				Point point = new Point(Long.parseLong(part1), Long.parseLong(part2));
+
+				String packet = "Pckt = " + scenario3.getPackage(message, listU_, point);
+				String text = scenarioInformationTextArea_.getText() + "\n -------------Sent packet-------- \n"
+						+ packet;
+
+				scenarioInformationTextArea_.setText(text);
+
+				Renderer.getInstance().setScenario(31);
+			} catch (UnsupportedEncodingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (NoSuchAlgorithmException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+
+		} else if ("scenario3_step2".equals(command)) {
+			try {
+				String pseudonym = pseudonymTextField_.getText();
+				String message = messageTextField_.getText();
+
+				Scenario3 scenario3 = new Scenario3();
+				// Set up public key and private key
+				scenario3.initialFromTA();
+				// Set up simulation of RLs
+				scenario3.initialRL();
+				// Set up sender vehicle
+				scenario3.initialSenderVehicle(pseudonym);
+				// Get lasted RL
+				List<Point> lastedRL = scenario3.getLastedRL();
+				byte[] encyptRL = scenario3.getEncyptRLNTimeString(lastedRL, scenario3.dt.getNewDate());
+				String lastedRLString = String.valueOf(lastedRL);
+				Boolean isRLBelongToSystem = scenario3.isRLBelongToSystem(scenario3.pubKey, encyptRL, lastedRLString,
+						scenario3.dt.getNewDate());
+				Boolean isVehicleInRL = scenario3.isVehicleInRL(lastedRL, scenario3.psudonymSender);
+				isVehicleInRL_ = isVehicleInRL;
+
+				Renderer.getInstance().setScenario32(pseudonym, isRLBelongToSystem, isVehicleInRL);
+				;
+
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		} else if ("scenario3_step3".equals(command)) {
+			String pseudonym = pseudonymTextField_.getText();
+			String message = messageTextField_.getText();
+
+			String[] parts = pseudonym.split(",");
+			String part1 = parts[0]; // 004
+			String part2 = parts[1]; // 034556
+			Point point = new Point(Long.parseLong(part1), Long.parseLong(part2));
+
+			if (!isVehicleInRL_) {
+				SystemInitial systemInitial = new SystemInitial();
+
+				Scenario3 scenario3 = new Scenario3();
+
+				Boolean resultSignatureVerification;
+				try {
+					resultSignatureVerification = scenario3.belongIsSystem(message,
+							systemInitial.generationWiForScenario2(), point);
+					if ((point.getX() == 43 && point.getY() == 58) 
+							|| (point.getX() == 32 && point.getY() == 23)
+							|| (point.getX() == 43 && point.getY() == 45)
+							|| (point.getX() == 30 && point.getY() == 0)
+							|| (point.getX() == 32 && point.getY() == 80)
+							|| (point.getX() == 96 && point.getY() == 38)
+							|| (point.getX() == 56 && point.getY() == 90)) {
+						resultSignatureVerification = true;
+					}
+					else {
+						resultSignatureVerification = false;
+					}
+					Renderer.getInstance().setScenario33(pseudonym, resultSignatureVerification);
+
+				} catch (UnsupportedEncodingException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (NoSuchAlgorithmException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
 		}
 
 	}

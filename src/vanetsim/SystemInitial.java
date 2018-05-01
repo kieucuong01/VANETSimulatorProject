@@ -70,6 +70,15 @@ public class SystemInitial {
 
 		return String.valueOf(result1);
 	}
+	
+	public Point generationWiForScenario2(){
+		// Wi
+		Point Qi = new Point(h.H1(4, 10).getX(), h.H1(4, 10).getY(), 1);
+		Point result1 = Qi.mult(ge.randomNumber(), a, b, p);
+
+		return result1;
+	}
+	
 	public List<Integer> generationU(){ //U <==> gia tri nuy cua moi xe
 		List<Integer> listU = new ArrayList<Integer>();
 		int uxj = (int)ge.randomNumber();

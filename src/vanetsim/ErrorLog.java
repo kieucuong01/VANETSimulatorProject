@@ -157,21 +157,21 @@ public final class ErrorLog {
 	 * @param loggerDir			directory where to delete files
 	 */
 	public static void deleteOld(long loggerTrashtime, String loggerDir) {
-		try {
-			File path = new File(loggerDir);
-			File files[] = path.listFiles();
-			long deletedate = System.currentTimeMillis() - 60000 - (loggerTrashtime * 86400000); // subtraction of 60000ms to avoid deletion of current logfile if logger_trashtime=0
-			for (int i = 0, n = files.length; i < n; i++) {
-				if (files[i].lastModified() < deletedate) {
-					String filename = files[i].toString();
-					if (files[i].delete())
-						log(Messages.getString("ErrorLog.oldLogfile") + filename + Messages.getString("ErrorLog.deletedSuccess"), 2, ErrorLog.class.getName(), "deleteold", null); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-					else
-						log(Messages.getString("ErrorLog.deleteFailed") + filename + "!", 5, ErrorLog.class.getName(), "deleteold", null); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				}
-			}
-		} catch (Exception e) {
-			log(Messages.getString("ErrorLog.deleteFailedGlobal"), 6, ErrorLog.class.getName(), "deleteold", e); //$NON-NLS-1$ //$NON-NLS-2$
-		}
+//		try {
+//			File path = new File(loggerDir);
+//			File files[] = path.listFiles();
+//			long deletedate = System.currentTimeMillis() - 60000 - (loggerTrashtime * 86400000); // subtraction of 60000ms to avoid deletion of current logfile if logger_trashtime=0
+//			for (int i = 0, n = files.length; i < n; i++) {
+//				if (files[i].lastModified() < deletedate) {
+//					String filename = files[i].toString();
+//					if (files[i].delete())
+//						log(Messages.getString("ErrorLog.oldLogfile") + filename + Messages.getString("ErrorLog.deletedSuccess"), 2, ErrorLog.class.getName(), "deleteold", null); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+//					else
+//						log(Messages.getString("ErrorLog.deleteFailed") + filename + "!", 5, ErrorLog.class.getName(), "deleteold", null); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+//				}
+//			}
+//		} catch (Exception e) {
+//			log(Messages.getString("ErrorLog.deleteFailedGlobal"), 6, ErrorLog.class.getName(), "deleteold", e); //$NON-NLS-1$ //$NON-NLS-2$
+//		}
 	}
 }
